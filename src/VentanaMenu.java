@@ -8,11 +8,14 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.FlowLayout;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
+import java.io.IOException;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 
@@ -38,8 +41,9 @@ public class VentanaMenu extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
-	public VentanaMenu() {
+	public VentanaMenu() throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 650);
 		contentPane = new JPanel();
@@ -50,49 +54,41 @@ public class VentanaMenu extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
+	
+		JButton jugar = new JButton("");
+		jugar.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/jugar.png")));
+		jugar.setBounds(300, 230, 252, 54);
+		contentPane.add(jugar);
 		
-		ImageIcon marco = new 	ImageIcon("./src/assets/marco_final.png");
+		JButton opciones = new JButton("");
+		opciones.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/opciones.png")));
+		opciones.setBounds(300, 280, 252, 54);
+		contentPane.add(opciones);
+		
+	
+		
+	
+			
+		ImageIcon marco = new 	ImageIcon("./src/Assets/Otros/marco_final.png");
 		JLabel marco_label = new JLabel(marco);
 		marco_label.setBounds(0, 0, 844, 621);
 		contentPane.add(marco_label);
-		
-		ImageIcon ic1 = new 	ImageIcon("./src/assets/titulo.png");
+	
+		ImageIcon ic1 = new 	ImageIcon("./src/Assets/Otros/titulo.png");
 		JLabel lblNewLabel_2 = new JLabel(ic1);
 		lblNewLabel_2.setBounds(0, -180, 844, 621);
 		contentPane.add(lblNewLabel_2);
 		
 		
-		ImageIcon jugar = new ImageIcon("./src/assets/jugar.png");
-		JLabel titulo = new JLabel(jugar);
-		titulo.setBounds(0, -60, 844, 621);
-		contentPane.add(titulo);
+	
 		
-		
-		ImageIcon opciones = new ImageIcon("./src/assets/opciones.png");
-		JLabel opci = new JLabel(opciones);
-		opci.setBounds(0, 0, 844, 621);
-		contentPane.add(opci);
-		
-		ImageIcon reglas = new ImageIcon("./src/assets/reglas.png");
-		JLabel regl = new JLabel(reglas);
-		regl.setBounds(0, 60, 844, 621);
-		contentPane.add(regl);
-		
-		ImageIcon creadores = new ImageIcon("./src/assets/creadores.png");
-		JLabel crear = new JLabel(creadores);
-		crear.setBounds(0, 120, 844, 621);
-		contentPane.add(crear);
-		
-		
-		
-		
-		
-		ImageIcon ic = new 	ImageIcon("./src/assets/video_f1.gif");
+		ImageIcon ic = new 	ImageIcon("./src/Assets/Fondos/video_f1.gif");
 		
 		JLabel lblNewLabel_1 = new JLabel(ic);
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(0, 0, 844, 621);
 		contentPane.add(lblNewLabel_1);
+		
+
 
 
 
