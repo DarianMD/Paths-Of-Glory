@@ -57,18 +57,31 @@ public class VentanaMenu extends JFrame {
 	
 		JButton jugar = new JButton("");
 		jugar.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/jugar.png")));
-		jugar.setBounds(300, 230, 252, 54);
+		jugar.setBounds(290, 230, 252, 54);
 		contentPane.add(jugar);
 		
 		JButton opciones = new JButton("");
 		opciones.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/opciones.png")));
-		opciones.setBounds(300, 280, 252, 54);
+		opciones.setBounds(290, 280, 252, 54);
 		contentPane.add(opciones);
 		
-	
+		JButton reglas = new JButton("");
+		reglas.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/reglas.png")));
+		reglas.setBounds(290, 330, 252, 54);
+		contentPane.add(reglas);
+		
+		JButton creadores = new JButton("");
+		creadores.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/creadores.png")));
+		creadores.setBounds(290, 380, 252, 54);
+		contentPane.add(creadores);
+		
+		JButton salir = new JButton("");
+		salir.setIcon(new ImageIcon(VentanaMenu.class.getResource("/Assets/Botones/salir.png")));
+		salir.setBounds(290, 430, 252, 54);
+		contentPane.add(salir);
+		
 		
 	
-			
 		ImageIcon marco = new 	ImageIcon("./src/Assets/Otros/marco_final.png");
 		JLabel marco_label = new JLabel(marco);
 		marco_label.setBounds(0, 0, 844, 621);
