@@ -13,6 +13,8 @@ import javax.swing.*;
 //Ventana principal del juego
 public class VentanaJuego extends JFrame implements ActionListener {
 	
+	int num = 1;
+	
 	//Panel del menu principal
 	private PanelMenu panelMenu = new PanelMenu();
 	//Panel donde se crean y enseñan los equipos
@@ -29,6 +31,8 @@ public class VentanaJuego extends JFrame implements ActionListener {
 	
 	//Array list donde se guarda el nombre y datos de cada equipo creado
 	private ArrayList<String[]> estadoEquipos = new ArrayList<String[]>();
+	
+	
 	
 	
 	public VentanaJuego() {
@@ -53,9 +57,6 @@ public class VentanaJuego extends JFrame implements ActionListener {
 		add(panelCreacionEquipos);
 		panelCreacionEquipos.setVisible(false);
 		
-		
-		add(panelCreadores);
-		panelCreadores.setVisible(false);
 	
 		
 		panelDisplayEquipos.setBounds(400, 0, 1200, 710);
@@ -63,6 +64,12 @@ public class VentanaJuego extends JFrame implements ActionListener {
 		panelCreacionEquipos.addFondoPantalla();
 		panelDisplayEquipos.addFondo();
 		
+		add(panelCreadores);
+		panelCreadores.setVisible(false);
+	
+		
+		panelCreadores.IniciarFotos();
+	
 		formulario.setVisible(false);
 	}
 
@@ -80,6 +87,14 @@ public class VentanaJuego extends JFrame implements ActionListener {
 		panelCreacionEquipos.getBotonVolverMenu().addActionListener(this);
 		
 		panelDisplayEquipos.setLayout(null);
+		
+		
+		
+		//Eventos de creadores
+		panelCreadores.getBotonSiguiente().addActionListener(this);
+		panelCreadores.getBotonAnterior().addActionListener(this);
+		panelCreadores.getBotonVolverMenu().addActionListener(this);
+
 		
 		//Eventos del formulario de creacion de equipos
 		formulario.getBotonCrear().addActionListener(this);
@@ -153,6 +168,22 @@ public class VentanaJuego extends JFrame implements ActionListener {
 				formulario.setVisible(false);
 			}
 		}
+		
+		
+		//Evento creadores
+	
+		panelCreadores.changeCreadores(num);
+
+		if(e.getSource() == panelCreadores.getBotonSiguiente() && num < 3) {
+			num++;
+			panelCreadores.changeCreadores(num);
+		}
+		else if(e.getSource() == panelCreadores.getBotonAnterior() && num > 1) {
+			num--;
+			panelCreadores.changeCreadores(num);
+		}
+				
+		
 	}
 
 	public static void main(String[] args) {
