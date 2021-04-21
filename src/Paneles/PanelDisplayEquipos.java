@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class PanelDisplayEquipos extends JPanel {
 	
 	private JLabel fondo = new JLabel();
-	private ImageIcon iconoFondo = new ImageIcon("./src/Fondos/fondoEquipos.png");
+	private ImageIcon iconoFondo = new ImageIcon("./assets/Fondos/fondoEquipos.png");
 	
 	public PanelDisplayEquipos() {
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));

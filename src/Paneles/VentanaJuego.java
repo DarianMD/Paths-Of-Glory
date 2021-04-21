@@ -1,15 +1,15 @@
 package Paneles;
 
-
 import utils.*;
 import javax.swing.*;
 
 //Ventana principal del juego
 public class VentanaJuego extends JFrame {
 	
-	
 	//Modelo donde se guardan las vistas
 	ModeloDatos paneles = new ModeloDatos();
+	
+	//Controlador que controla los eventos de cada panel
 	ControladorEventos controlador = new ControladorEventos(paneles);
 	
 	
@@ -19,9 +19,9 @@ public class VentanaJuego extends JFrame {
 		setTitle("Path of glory");
 		setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		añadirPanelesIniciales();
 		setLocationRelativeTo(null);
-		setResizable(false);	
+		setResizable(false);
+		añadirPanelesIniciales();
 		setVisible(true);
 	}
 	
@@ -29,7 +29,6 @@ public class VentanaJuego extends JFrame {
 	public void añadirPanelesIniciales() {
 		this.add(paneles.getPanelMenu());
 		paneles.getPanelMenu().setVisible(true);
-		
 		this.add(paneles.getPanelCreadores());
 		paneles.getPanelCreadores().setVisible(false);
 		
@@ -44,7 +43,6 @@ public class VentanaJuego extends JFrame {
 		paneles.getPanelDisplayEquipos().addFondo();
 		
 		paneles.getFormulario().setLocationRelativeTo(paneles.getPanelCreacionEquipos());
-		
 		paneles.getFormulario().setVisible(false);
 	}
 	

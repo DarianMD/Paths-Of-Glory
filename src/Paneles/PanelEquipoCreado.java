@@ -45,34 +45,34 @@ public class PanelEquipoCreado extends JPanel{
 		
 		switch(nombrePais) {
 		case"España":
-			return "./src/ImagenesBanderas/espania.png";
+			return "./assets/ImagenesBanderas/espania.png";
 			
 		case"Alemania":
-			return "./src/ImagenesBanderas/alemania.png";
+			return "./assets/ImagenesBanderas/alemania.png";
 		
 		case "Francia":
-			return "./src/ImagenesBanderas/francia.png";
+			return "./assets/ImagenesBanderas/francia.png";
 		
 		case "Italia":
-			return "./src/ImagenesBanderas/italia.png";
+			return "./assets/ImagenesBanderas/italia.png";
 			
 		case "Marruecos":
-			return "./src/ImagenesBanderas/Marruecos.png";
+			return "./assets/ImagenesBanderas/Marruecos.png";
 			
 		case "Noruega":
-			return "./src/ImagenesBanderas/Noruega.png";
+			return "./assets/ImagenesBanderas/Noruega.png";
 			
 		case "Portugal":
-			return "./src/ImagenesBanderas/portugal.png";
+			return "./assets/ImagenesBanderas/portugal.png";
 		
 		case "URSS":
-			return "./src/ImagenesBanderas/urss.png";
+			return "./assets/ImagenesBanderas/urss.png";
 			
 		case "USA":
-			return "./src/ImagenesBanderas/usa.png";
+			return "./assets/ImagenesBanderas/usa.png";
 		
 		case "Rumania":
-			return "./src/ImagenesBanderas/rumania.png";	
+			return "./assets/ImagenesBanderas/rumania.png";	
 		}
 		return "";
 	}
@@ -80,34 +80,34 @@ public class PanelEquipoCreado extends JPanel{
 	public String returnRutaFondoBandera(String nombrePais) {
 		switch(nombrePais) {
 		case"España":
-			return "./src/FondosBanderas/fondoEspana.png";
+			return "./assets/FondosBanderas/fondoEspana.png";
 			
 		case"Alemania":
-			return "./src/FondosBanderas/fondoAlemania.png";
+			return "./assets/FondosBanderas/fondoAlemania.png";
 		
 		case "Francia":
-			return "./src/FondosBanderas/fondoFrancia.png";
+			return "./assets/FondosBanderas/fondoFrancia.png";
 		
 		case "Italia":
-			return "./src/FondosBanderas/fondoItalia.png";
+			return "./assets/FondosBanderas/fondoItalia.png";
 			
 		case "Marruecos":
-			return "./src/FondosBanderas/fondoMarruecos.png";
+			return "./assets/FondosBanderas/fondoMarruecos.png";
 			
 		case "Noruega":
-			return "./src/FondosBanderas/fondoNoruega.png";
+			return "./assets/FondosBanderas/fondoNoruega.png";
 			
 		case "Portugal":
-			return "./src/FondosBanderas/fondoPortugal.png";
+			return "./assets/FondosBanderas/fondoPortugal.png";
 		
 		case "URSS":
-			return "./src/FondosBanderas/fondoURSS.png";
+			return "./assets/FondosBanderas/fondoURSS.png";
 			
 		case "USA":
-			return "./src/FondosBanderas/fondoUSA.png";
+			return "./assets/FondosBanderas/fondoUSA.png";
 		
 		case "Rumania":
-			return "./src/FondosBanderas/fondoRumania.png";	
+			return "./assets/FondosBanderas/fondoRumania.png";	
 		}
 		return "";
 	}

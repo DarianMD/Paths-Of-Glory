@@ -11,17 +11,17 @@ public class PanelCreadores extends JPanel {
 	private JButton botonAnterior = new JButton("Anterior");
 	private JButton botonVolverMenu = new JButton("Volver al menu");
 	private JLabel fondo = new JLabel();
-	private ImageIcon imagenFondo = new ImageIcon("./src/Fondos/fondo_creadores.png");
+	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/fondo_creadores.png");
 
 	private JLabel creador = new JLabel();
-	private ImageIcon darian_info = new ImageIcon("./src/Creadores/darian_manasturean.png");
-	private ImageIcon sergio_info = new ImageIcon("./src/Creadores/sergio_martin.png");
-	private ImageIcon gabriel_info = new ImageIcon("./src/Creadores/gabriel_voica.png");
+	private ImageIcon darian_info = new ImageIcon("./assets/Creadores/darian_manasturean.png");
+	private ImageIcon sergio_info = new ImageIcon("./assets/Creadores/sergio_martin.png");
+	private ImageIcon gabriel_info = new ImageIcon("./assets/Creadores/gabriel_voica.png");
 
 
 
 	private JLabel prueba = new JLabel();
-	private ImageIcon pruebas = new ImageIcon("./src/Fondos/prueba.png");
+	private ImageIcon pruebas = new ImageIcon("./assets/Fondos/prueba.png");
 	
 	public int numeroCreadores;
 
