@@ -23,7 +23,7 @@ public class PanelCreadores extends JPanel {
 	private JLabel prueba = new JLabel();
 	private ImageIcon pruebas = new ImageIcon("./src/Fondos/prueba.png");
 	
-	public int num;
+	public int numeroCreadores;
 
 
 	public PanelCreadores() {
