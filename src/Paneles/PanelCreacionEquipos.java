@@ -16,7 +16,7 @@ public class PanelCreacionEquipos extends JPanel {
 	private JButton botonVolverMenu = new JButton("Volver al menu");
 	
 	private JLabel fondo = new JLabel();
-	private ImageIcon imagenFondo = new ImageIcon("./src/Fondos/FondoMenuEquipos.png");
+	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/FondoMenuEquipos.png");
 	
 	//Panel donde se veran los equipos
 	private PanelDisplayEquipos panelEquipos = new PanelDisplayEquipos();
