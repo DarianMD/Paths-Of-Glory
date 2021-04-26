@@ -1,4 +1,4 @@
-package Paises;
+package Juego.Paises;
 
 public class PaisNoruega extends Pais implements Tipo {
 
