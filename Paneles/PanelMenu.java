@@ -99,35 +99,38 @@ public class PanelMenu extends JPanel {
 	public void Siguiente() {
 
 		num = 0;
-		contador++;
+		contador += 1;
+		botones = 0;
 		
 		for(int x = 0; x < buttons.length; x++) {
 			botones += 1;
 
+			
+			if(botones + 1 > 4) {
+				botones = 0;
+			}
+			
+			if(contador + 1 > 4) {
+				contador = 0;
+			}
+			else {
+				contador++;
+			}
+			
 			System.out.println("Botones : " + botones);
 			System.out.println("Contador : " + contador);
 			System.out.println("Num : " + num);			
 
 			if(botones >= contador) {
 				
-
-				if(contador + 1 > 4 || botones + 1 > 4) {
-					contador = 0;
-					botones = 0;
-				}
-				else {
-					contador++;
-				}
-
+				buttons[botones].setBounds(sizey[0 + num], sizex, size1, size2);
+				buttons[botones].setVisible(true);
 				if(num + 1 > 2) {
 					num--;
 				}
 				else {
 					num++;
 				}
-				
-				buttons[botones].setBounds(sizey[0 + num], sizex, size1, size2);
-				buttons[botones].setVisible(true);
 			}
 			else {
 				buttons[botones].setVisible(false);
