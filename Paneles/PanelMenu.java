@@ -28,10 +28,8 @@ public class PanelMenu extends JPanel {
 
 	JButton[] buttons = new JButton[] {botonJugar, botonContinuarPartida,botonSalir,botonComoJugar,botonInfoCreadores};
 	int num = 0;
-
-
-
-
+	int contador = 0;
+	int botones = 0;
 
 	int sizex = 725;
 	int[] sizey = new int[]{243,643,1043}; 
@@ -62,11 +60,8 @@ public class PanelMenu extends JPanel {
 		botonSiguiente.setBounds(loc_move[1], sizex, size_move1, size_move2);
 		botonAnterior.setBounds(loc_move[0], sizex, size_move1, size_move2);
 
-
-
 		for(int y = 0; y < buttons.length; y++) {
 			buttons[y].setVisible(false);
-
 		}
 
 		for(int x = 0; x < buttons.length; x++) {
@@ -74,9 +69,11 @@ public class PanelMenu extends JPanel {
 				buttons[x].setBounds(sizey[0 + num], sizex, size1, size2);
 				buttons[x].setVisible(true);
 				num++;
+				contador++;
 			}
-
 		} 
+
+		contador--;
 	}
 
 	/* public void boton_image() {
@@ -99,37 +96,45 @@ public class PanelMenu extends JPanel {
 
 	}
 
-
 	public void Siguiente() {
 
 		num = 0;
-		int anterior = 0;
-		int siguiente = 2;
-
+		contador++;
+		
 		for(int x = 0; x < buttons.length; x++) {
+			botones += 1;
 
-			if(x == num && x >= anterior++ && x <= siguiente++ ) {
-				if(num > 2) {
-					num = 0;
+			System.out.println("Botones : " + botones);
+			System.out.println("Contador : " + contador);
+			System.out.println("Num : " + num);			
 
-					if(anterior > 4) {
-						anterior = 0;
-					}
-					if(siguiente > 4) {
-						siguiente = 0;
-					}
+			if(botones >= contador) {
+				
 
-					buttons[x].setBounds(sizey[0 + num], sizex, size1, size2);
-					buttons[x].setVisible(true);
-					num++;
+				if(contador + 1 > 4 || botones + 1 > 4) {
+					contador = 0;
+					botones = 0;
 				}
 				else {
-					buttons[x].setVisible(false);
+					contador++;
 				}
 
-			} 
+				if(num + 1 > 2) {
+					num--;
+				}
+				else {
+					num++;
+				}
+				
+				buttons[botones].setBounds(sizey[0 + num], sizex, size1, size2);
+				buttons[botones].setVisible(true);
+			}
+			else {
+				buttons[botones].setVisible(false);
+			}
 
-		}
+		} 
+
 
 	}
 
@@ -141,8 +146,6 @@ public class PanelMenu extends JPanel {
 
 
 			if(x == num && x >= anterior - 1 && x <= siguiente - 1 ) {
-
-
 				buttons[x].setBounds(sizey[0 + num], sizex, size1, size2);
 				buttons[x].setVisible(true);
 				num++;
