@@ -32,6 +32,9 @@ public class ControladorEventos implements ActionListener {
 		modelo.getPanelMenu().getBotonComoJugar().addActionListener(this);
 		modelo.getPanelMenu().getBotonCreadores().addActionListener(this);
 		modelo.getPanelMenu().getBotonSalir().addActionListener(this);
+		modelo.getPanelMenu().getBotonAnterior().addActionListener(this);
+		modelo.getPanelMenu().getBotonSiguiente().addActionListener(this);
+
 		
 		//Eventos del menu de creacion de equipos
 		modelo.getPanelCreacionEquipos().getBotonJugarPartida().addActionListener(this);
@@ -44,6 +47,8 @@ public class ControladorEventos implements ActionListener {
 		modelo.getPanelCreadores().getBotonVolverMenu().addActionListener(this);
 		
 		modelo.getPanelDisplayEquipos().setLayout(null);
+		
+		
 		
 		//Eventos del formulario de creacion de equipos
 		modelo.getFormulario().getBotonCrear().addActionListener(this);
@@ -72,16 +77,21 @@ public class ControladorEventos implements ActionListener {
 				modelo.getPanelMenu().setVisible(false);
 				modelo.getPanelCreacionEquipos().setVisible(true);
 				
-				
 			}
 			
 			if(e.getSource() == modelo.getPanelMenu().getBotonComoJugar()) {
-				
 			}
 			
 			if(e.getSource() == modelo.getPanelMenu().getBotonCreadores()) {
 				modelo.getPanelMenu().setVisible(false);
 				modelo.getPanelCreadores().setVisible(true);
+			}
+			if(e.getSource() == modelo.getPanelMenu().getBotonAnterior()) {
+				modelo.getPanelMenu().Anterior();
+			}
+			if(e.getSource() == modelo.getPanelMenu().getBotonSiguiente()) {
+				modelo.getPanelMenu().Siguiente();
+				
 			}
 			
 			if(e.getSource() == modelo.getPanelMenu().getBotonSalir()) {
@@ -101,6 +111,9 @@ public class ControladorEventos implements ActionListener {
 				this.limpiarEquipos();
 				modelo.getPanelMenu().setVisible(true);
 			}
+			
+			
+			
 			
 			
 			//Eventos formulario creacion equipos
