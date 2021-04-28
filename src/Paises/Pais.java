@@ -16,6 +16,11 @@ public class Pais {
 	  this.vida = 200;
     }
 	
+	public Pais() {
+		  
+	    }
+	
+	
     //Setters
 	public void setDañoAtaque(double danyoAtaque) {
 		this.danyoAtaque = danyoAtaque;
@@ -36,6 +41,7 @@ public class Pais {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
+	
 	
 	
 	

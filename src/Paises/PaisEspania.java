@@ -7,6 +7,13 @@ public class PaisEspania extends Pais implements Tipo {
 		this.aplicarStatsPais();
 	}
 	
+	public PaisEspania() {
+		
+	}
+
+	
+	
+	
 
 	@Override
 	public void aplicarStatsPais() {
