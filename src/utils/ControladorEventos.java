@@ -168,7 +168,8 @@ public class ControladorEventos implements ActionListener{
 		if(e.getSource() == modelo.getFormulario().getBotonCrear()) {
 			String[] infoEquipo = modelo.getFormulario().devolverArrayNuevoEquipo();
 
-			if(infoEquipo[0].length() > 0 && modelo.getEquiposCreados().size() < 4) {
+			if(infoEquipo[0].length() > 0 && modelo.getEquiposCreados().size() < 4 && !(this.modelo.getNombresEquipos().contains(infoEquipo[0]))) {
+				this.modelo.getNombresEquipos().add(infoEquipo[0]);
 				modelo.getFormulario().limpiarFomulario();
 				modelo.getEquiposCreados().add(new PanelEquipoCreado());
 
