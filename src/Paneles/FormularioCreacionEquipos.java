@@ -21,6 +21,30 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener,
 	private String[] listaPaises = {"España","Alemania","URSS","USA","Portugal","Noruega","Francia","Italia","Rumania","Marruecos"};
 
 	private String[] descripcionesPaises = {
+<<<<<<< HEAD
+		"España tiene un poderoso ejercito y un enorme potencial militar.\n "
+		+ "Su lider Franco es temido en todo el globo.",
+
+		"Francia o tambien llamada la potencia Baguette. Poderosos y temibles,"
+		+ "comandados por su poderoso lider Franchuten.",
+
+		"Alemania, el tercer reich se alza comandado por Hitler. Cuenta con un gran ejercito"
+		+"muy disciplinado.",
+
+		"Estados Unidos de America. Abraham Lincoln lo govierna con lealtad, disciplina y determinacion."+
+		"Un pais muy temible",
+		"La URSS. Potencia comunista del globo, su poder reside en el número de soldados. Son fuertes y rusos la mayoria,"
+		+"con eso se dice todo",
+		"Italia, el país de la pasta, y no precisamente la de comer (que también). Su lider Mussolini"
+		+ "es un hombre severo y temible, ademas de calvo.",
+		"Marruecos, liderado por Sadam Husein, lider politico brillante, tiene un ejercito de tierra, mar y aire sumamente"
+		+ "poderoso. Ademas de comer unos kebabs que estan de lujo.",
+		"Rumania y su lider Vlad son temidos por el mundo entero. Vlad el empalador, tambien llamado el conde Dracúla impone"
+		+ "el terror solo con su presencia.",
+		"Noruega el mayor exportador de salmón del mundo, es también el mayor importador de armas del mundo."+
+		"Con una economia sumamente rica y un poder militar imbatible son considerados una gran amenaza por el mundo entero.",
+		"Portugal, tambien conocidos como los diablos de Portua, temibles soldados armados hasta los dientes y liderados por Salazar.",
+=======
 			"España tiene un poderoso ejercito y un enorme potencial militar.\n "
 					+ "Su lider Franco es temido en todo el globo.",
 
@@ -44,6 +68,7 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener,
 																					"Con una economia sumamente rica y un poder militar imbatible son considerados una gran amenaza por el mundo entero.",
 																					"Portugal, tambien conocidos como los diablos de Portua, temibles soldados armados hasta los dientes y liderados por Salazar.",
 
+>>>>>>> origin/main
 	};
 
 
@@ -170,8 +195,11 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener,
 		// TODO Auto-generated method stub
 		
 	}
+<<<<<<< HEAD
+=======
 
 	
 
+>>>>>>> origin/main
 }
 

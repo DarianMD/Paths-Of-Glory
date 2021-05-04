@@ -21,8 +21,14 @@ import JuegoUtils.*;
 public class ControladorPartida implements ActionListener, ChangeListener {
 
 
+<<<<<<< HEAD
+	
+	private VentanaPartida ventana = new VentanaPartida();
+	private ModeloPartida modeloDatos = new ModeloPartida();
+=======
 	VentanaPartida ventana = new VentanaPartida();
 	ModeloPartida modeloDatos = new ModeloPartida();
+>>>>>>> origin/main
 
 
 	private ArrayList<String[]> ataquesTurnos = new ArrayList<String[]>();
@@ -32,6 +38,10 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 
 
 
+<<<<<<< HEAD
+	//Abre todos los componentes de los paneles del juego a eventos
+=======
+>>>>>>> origin/main
 	public void abrirComponentesAEventos() {
 		JSlider slider = modeloDatos.getPanelPartida().getSliderCantidadAtaque();
 		slider.addChangeListener(this);
@@ -49,13 +59,21 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 		botonDefender.addActionListener(this);
 	}
 
+<<<<<<< HEAD
+	//Inicia la partida 
+=======
+>>>>>>> origin/main
 	public void iniciarPartida(ArrayList<Pais> equipos) {
 
 		modeloDatos.setEquiposCreados(equipos);
 
 		this.abrirComponentesAEventos();
 		this.modeloDatos.setPaisJugandoTurno(modeloDatos.getEquiposCreados().get(0));
+<<<<<<< HEAD
+		this.modeloDatos.setPaisSeleccionado(modeloDatos.getEquiposCreados().get(1));
+=======
 		this.modeloDatos.setPaisSeleccionado(modeloDatos.getEquiposCreados().get(0));
+>>>>>>> origin/main
 		this.añadirPanelAVentana();	
 		this.añadirNombresEquiposEnemigosComboBox();
 		this.añadirEnPantallaVidasRestantesEquipos();
