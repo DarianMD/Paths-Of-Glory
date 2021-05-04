@@ -12,7 +12,6 @@ public class VentanaJuego extends JFrame {
 	//Controlador que controla los eventos de cada panel
 	ControladorEventos controlador = new ControladorEventos(paneles);
 	
-	
 	public VentanaJuego() {
 		//Configuracion inicial de la ventana
 		setSize(1600,900);

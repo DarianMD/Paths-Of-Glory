@@ -55,11 +55,12 @@ public class PanelMenu extends JPanel {
 
 	//Funcion para inicializar los botones del panel
 	public void inicializarBotones() {
+		
+		this.boton_image();
+		this.boton_bounds();
 		this.marco_add();
 		this.fondo_add();
-		this.boton_bounds();
-		this.boton_add();
-
+		repaint();
 	}
 
 
@@ -69,7 +70,7 @@ public class PanelMenu extends JPanel {
 		botonAnterior.setBounds(loc_move[0], sizex, size_move1, size_move2);
 
 		for(int y = 0; y < buttons.length; y++) {
-			buttons[y].setVisible(true);
+			buttons[y].setVisible(false);
 		}
 
 		for(int x = 0; x < buttons.length; x++) {
@@ -80,34 +81,24 @@ public class PanelMenu extends JPanel {
 				contador++;
 			}
 			else {
-				buttons[x].setVisible(false);
+				buttons[x].setVisible(false);}
 
-			}
+			
 		}
-		
-		
-		
-
+	
 	}
-
-	
-	 public void boton_image() {
-		botonJugar.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/boton_jugar.png")));
-		botonContinuarPartida.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/boton_continuar.png")));
-		botonComoJugar.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/boton_como_jugar.png")));
-		botonInfoCreadores.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/boton_creadores.png")));
-		botonSalir.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/boton_salir.png")));
-		botonSiguiente.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/flecha_derecha.png")));
-		botonAnterior.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/Botones_Menu/flecha_izquierda.png")));
 		
-	
+		
 
-	} 
-
-	public void boton_add() {
-		revalidate();
-		repaint();
-		this.boton_image();
+	 public void boton_image() {
+		botonJugar.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/boton_jugar.png"));
+		botonContinuarPartida.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/boton_continuar.png"));
+		botonComoJugar.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/boton_como_jugar.png"));
+		botonInfoCreadores.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/boton_creadores.png"));
+		botonSalir.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/boton_salir.png"));
+		botonSiguiente.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/flecha_derecha.png"));
+		botonAnterior.setIcon(new ImageIcon("./assets/Botones/Botones_Menu/flecha_izquierda.png"));
+		
 		this.add(botonAnterior);
 		this.add(botonSiguiente);
 		this.add(botonJugar);
@@ -116,19 +107,16 @@ public class PanelMenu extends JPanel {
 		this.add(botonInfoCreadores);
 		this.add(botonSalir);
 		
-		
-
-	}
-
 	
-	
+	} 
+
+			
 	public void fondo_add() {
 		fondo.setBounds(0, 0, 1600, 900);
 		fondo.setIcon(fondo_guerra);
 		this.add(fondo);
 
 	}
-	
 	
 	public void marco_add() {
 		marco.setBounds(0, 0, 1600, 900);

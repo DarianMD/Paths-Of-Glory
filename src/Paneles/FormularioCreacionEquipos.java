@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import Paises.*;
+import JuegoPaises.*;
+
 
 
 //Es la clase de la ventana donde se crean los equipos
@@ -42,6 +43,8 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 	};
 
 
+	
+	
 
 	ImageIcon[] image = {
 			new ImageIcon("./assets/Personajes/Equipo_1/1.PNG"),
@@ -60,7 +63,6 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 	
 	
 	
-	Paises.Pais españa = new PaisEspania();
 	
 
 	private JLabel etiquetaNombres = new JLabel("Añade el nombre de tu equipo");
@@ -72,20 +74,43 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 	private JTextField campoNombreEquipo = new JTextField();
 	private JComboBox cajaEquipos = new JComboBox(listaPaises);
 	private JButton botonAdd = new JButton("Añadir");
+	
+	private JLabel marco_label = new JLabel();
+	private ImageIcon marco_foto = new ImageIcon("./assets/Fondos/marco_formulario_equipos.png");
+
+	
+	private JLabel fondo_label = new JLabel();
+	private ImageIcon fondo_foto = new ImageIcon("./assets/Fondos/fondo_formulario_equipos.jpg");
+	
+	private JLabel marco_personaje_label = new JLabel();
+	private ImageIcon marco_personaje_foto = new ImageIcon("./assets/Fondos/marco_personaje.png");
+
+
 
 	public FormularioCreacionEquipos() {
-		setSize(700,700);
+		setSize(715,735);
 		setLayout(null);
 		setResizable(false);
 		setTitle("Crear equipo");
 		inicializarComponentes();
-		setVisible(true);	
+		setVisible(true);
+		int vida_ = new PaisEspania("pais").getVida();
 	}
 
 	//Inicializa todos los componentes del panel
 	public void inicializarComponentes() {
+		
+		
+		marco_personaje_label.setBounds(390,385,170,230);
+		marco_personaje_label.setIcon(marco_personaje_foto);
+		this.add(marco_personaje_label);
 
-		etiquetaNombres.setBounds(5, 0,300,50);
+		marco_label.setBounds(0,0,700,700);
+		marco_label.setIcon(marco_foto);
+		this.add(marco_label);
+		
+		
+		etiquetaNombres.setBounds(30, 0,300,50);
 		add(etiquetaNombres);
 
 		campoNombreEquipo.setBounds(0, 50, 350, 25);
@@ -103,15 +128,16 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 		add(fotoDictador);
 
 
-
-
-
 		cajaEquipos.setBounds(5, 125, 200, 25);
 		cajaEquipos.addActionListener(this);
 		add(cajaEquipos);
 
 		botonAdd.setBounds(5, 300, 130,180);
 		add(botonAdd);
+		
+		fondo_label.setBounds(0,0,700,700);
+		fondo_label.setIcon(fondo_foto);
+		this.add(fondo_label);
 	}
 
 	//Devuelve la informacion del equipo creado
@@ -143,6 +169,7 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 			case "España":
 				this.descripcionPais.setText("<html>"+descripcionesPaises[0]+"</html>");
 				this.fotoDictador.setIcon(image[0]);
+				int vidaEquipo = new PaisEspania("").getVida();
 				break;
 			case "Alemania":
 				this.descripcionPais.setText("<html>"+descripcionesPaises[1]+"</html>");
