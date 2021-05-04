@@ -1,5 +1,12 @@
 package utils;
+<<<<<<< HEAD
 import java.util.ArrayList; 
+=======
+import java.util.ArrayList;
+
+
+
+>>>>>>> origin/main
 import Paneles.FormularioCreacionEquipos;
 import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
