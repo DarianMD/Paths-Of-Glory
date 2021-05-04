@@ -12,10 +12,6 @@ public class PaisPortugal extends Pais implements Tipo {
 		this.setDañoAtaque(2);
 		this.setVida((int)(Math.random()*200)+50);
 		this.setDañoAtaque(Math.random()+0.1);
-<<<<<<< HEAD
-		
-=======
 		this.setTipo(3);
->>>>>>> origin/main
 	}
 }

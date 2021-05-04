@@ -6,10 +6,7 @@ public class Pais {
 	private int vida;
 	private double danyoAtaque;
 	private String nombre;
-<<<<<<< HEAD
-=======
 	private int tipo;
->>>>>>> origin/main
 	private String personaje;
 	private int escudo;
 	private int energia;
@@ -49,13 +46,9 @@ public class Pais {
 		this.escudo = escudo;
 	}
 
-<<<<<<< HEAD
-	
-=======
 	public int getTipo() {
 		return tipo;
 	}
->>>>>>> origin/main
 
 	public String getPersonaje() {
 		return personaje;
@@ -78,13 +71,9 @@ public class Pais {
 		this.personaje = personaje;
 	}
 	
-<<<<<<< HEAD
-	
-=======
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
->>>>>>> origin/main
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -104,12 +93,9 @@ public class Pais {
 		return this.vida;
 	}
 	
-<<<<<<< HEAD
-=======
 	public int getTip() {
 		return this.tipo;
 	}
->>>>>>> origin/main
 	
 	public String getNombre() {
 		return this.nombre;

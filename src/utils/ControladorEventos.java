@@ -23,11 +23,7 @@ public class ControladorEventos implements ActionListener{
 		this.abrirBotonesAEventos();
 	}
 
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> origin/main
 	//Abre los botones de todos los paneles a recibir eventos
 	public void abrirBotonesAEventos() {
 		//Eventos del menu principal
@@ -116,10 +112,7 @@ public class ControladorEventos implements ActionListener{
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -175,8 +168,7 @@ public class ControladorEventos implements ActionListener{
 		if(e.getSource() == modelo.getFormulario().getBotonCrear()) {
 			String[] infoEquipo = modelo.getFormulario().devolverArrayNuevoEquipo();
 
-			if(infoEquipo[0].length() > 0 && modelo.getEquiposCreados().size() < 4 && !(this.modelo.getNombresEquipos().contains(infoEquipo[0]))) {
-				this.modelo.getNombresEquipos().add(infoEquipo[0]);
+			if(infoEquipo[0].length() > 0 && modelo.getEquiposCreados().size() < 4) {
 				modelo.getFormulario().limpiarFomulario();
 				modelo.getEquiposCreados().add(new PanelEquipoCreado());
 

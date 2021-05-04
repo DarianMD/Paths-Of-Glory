@@ -22,6 +22,9 @@ public class PanelCreacionEquipos extends JPanel {
 	private PanelDisplayEquipos panelEquipos = new PanelDisplayEquipos();
 	
 	
+	int size_y = 285;
+	int size_x = 100;
+	
 	
 	public PanelCreacionEquipos() {
 		setSize(1600,900);
@@ -32,16 +35,19 @@ public class PanelCreacionEquipos extends JPanel {
 	
 	//Funcion para inicializar los botones
 	public void inicializarBotones() {
-		botonCrearEquipo.setBounds(30, 30, 300, 100);
-		botonJugarPartida.setBounds(1270, 750, 300, 100);
-		botonVolverMenu.setBounds(30, 750, 300, 100);
+		botonCrearEquipo.setBounds(30, 30, size_y, size_x);
+		botonJugarPartida.setBounds(1270, 750, size_y, size_x);
+		botonVolverMenu.setBounds(30, 750, size_y, size_x);
 		
 		
-		
+		botonCrearEquipo.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/boton_añadir_equipo.jpg"));
+		botonVolverMenu.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/boton_volver_al_menu.jpg"));
+		botonJugarPartida.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/boton_jugar.jpg"));
+
+
 		this.add(botonCrearEquipo);
 		this.add(botonJugarPartida);
 		this.add(botonVolverMenu);
-		
 		
 	}
 	

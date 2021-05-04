@@ -1,12 +1,8 @@
 package utils;
-<<<<<<< HEAD
-import java.util.ArrayList; 
-=======
 import java.util.ArrayList;
 
 
 
->>>>>>> origin/main
 import Paneles.FormularioCreacionEquipos;
 import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
@@ -36,11 +32,7 @@ public class ModeloDatos {
 		//Array list donde se guarda el nombre y datos de cada equipo creado
 		private ArrayList<String[]> estadoEquipos = new ArrayList<String[]>();
 		
-		private ArrayList<String> nombresEquipos = new ArrayList<String>();
 		
-		
-		
-
 		private int numEquipos = 0;
 		private int numeroCreador  = 1;
 		
@@ -88,44 +80,6 @@ public class ModeloDatos {
 
 		public void setNumeroCreador(int numeroCreador) {
 			this.numeroCreador = numeroCreador;
-		}
-		
-		
-
-		public ArrayList<String> getNombresEquipos() {
-			return nombresEquipos;
-		}
-
-		public void setNombresEquipos(ArrayList<String> nombresEquipos) {
-			this.nombresEquipos = nombresEquipos;
-		}
-
-		public void setPanelMenu(PanelMenu panelMenu) {
-			this.panelMenu = panelMenu;
-		}
-
-		public void setPanelCreacionEquipos(PanelCreacionEquipos panelCreacionEquipos) {
-			this.panelCreacionEquipos = panelCreacionEquipos;
-		}
-
-		public void setPanelDisplayEquipos(PanelDisplayEquipos panelDisplayEquipos) {
-			this.panelDisplayEquipos = panelDisplayEquipos;
-		}
-
-		public void setPanelCreadores(PanelCreadores panelCreadores) {
-			this.panelCreadores = panelCreadores;
-		}
-
-		public void setFormulario(FormularioCreacionEquipos formulario) {
-			this.formulario = formulario;
-		}
-
-		public void setEquiposCreados(ArrayList<PanelEquipoCreado> equiposCreados) {
-			this.equiposCreados = equiposCreados;
-		}
-
-		public void setEstadoEquipos(ArrayList<String[]> estadoEquipos) {
-			this.estadoEquipos = estadoEquipos;
 		}
 		
 		
