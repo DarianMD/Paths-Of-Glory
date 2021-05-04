@@ -6,7 +6,6 @@ public class Pais {
 	private int vida;
 	private double danyoAtaque;
 	private String nombre;
-	private int tipo;
 	private String personaje;
 	private int escudo;
 	private int energia;
@@ -46,10 +45,7 @@ public class Pais {
 		this.escudo = escudo;
 	}
 
-	public int getTipo() {
-		return tipo;
-	}
-
+	
 	public String getPersonaje() {
 		return personaje;
 	}
@@ -71,9 +67,7 @@ public class Pais {
 		this.personaje = personaje;
 	}
 	
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
-	}
+	
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -93,9 +87,7 @@ public class Pais {
 		return this.vida;
 	}
 	
-	public int getTip() {
-		return this.tipo;
-	}
+	
 	
 	public String getNombre() {
 		return this.nombre;

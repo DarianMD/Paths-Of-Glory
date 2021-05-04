@@ -1,6 +1,7 @@
 package Paneles;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,6 +46,9 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 
 	
 	
+	Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 25);
+	Font  fuente2  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ROMAN_BASELINE, 17);
+
 
 	ImageIcon[] image = {
 			new ImageIcon("./assets/Personajes/Equipo_1/1.PNG"),
@@ -66,7 +70,6 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 	
 
 	private JLabel etiquetaNombres = new JLabel("Añade el nombre de tu equipo");
-	private JLabel etiquetaPaises = new JLabel("Elige el pais que quieres controlar");
 	private JLabel descripcionPais = new JLabel("Hola");
 	private JLabel fotoDictador = new JLabel("");
 
@@ -100,8 +103,10 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 	//Inicializa todos los componentes del panel
 	public void inicializarComponentes() {
 		
-		
-		marco_personaje_label.setBounds(390,385,170,230);
+		etiquetaNombres.setFont(fuente1);
+		descripcionPais.setFont(fuente2);
+
+		marco_personaje_label.setBounds(490,40,170,230);
 		marco_personaje_label.setIcon(marco_personaje_foto);
 		this.add(marco_personaje_label);
 
@@ -110,29 +115,26 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener{
 		this.add(marco_label);
 		
 		
-		etiquetaNombres.setBounds(30, 0,300,50);
+		etiquetaNombres.setBounds(40, 0,500,100);
 		add(etiquetaNombres);
 
-		campoNombreEquipo.setBounds(0, 50, 350, 25);
+		campoNombreEquipo.setBounds(40, 85, 400, 25);
 		add(campoNombreEquipo);
 
-		etiquetaPaises.setBounds(5, 75, 300, 50);
-		add(etiquetaPaises);
-
-		descripcionPais.setBounds(5, 120, 180, 10);
+		descripcionPais.setBounds(40, 55, 300, 300);
 		descripcionPais.setText("<html>"+this.descripcionesPaises[0]+"</html>");
 		add(descripcionPais);
 
-		fotoDictador.setBounds(400, 400, 150, 200);
+		fotoDictador.setBounds(500, 50, 150, 200);
 		fotoDictador.setIcon(image[0]);
 		add(fotoDictador);
 
 
-		cajaEquipos.setBounds(5, 125, 200, 25);
+		cajaEquipos.setBounds(475, 275, 200, 25);
 		cajaEquipos.addActionListener(this);
 		add(cajaEquipos);
 
-		botonAdd.setBounds(5, 300, 130,180);
+		botonAdd.setBounds(40, 500, 130,180);
 		add(botonAdd);
 		
 		fondo_label.setBounds(0,0,700,700);
