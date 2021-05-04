@@ -2,14 +2,14 @@ package utils;
 import java.util.ArrayList;
 
 
+
 import Paneles.FormularioCreacionEquipos;
 import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
 import Paneles.PanelDisplayEquipos;
 import Paneles.PanelEquipoCreado;
 import Paneles.PanelMenu;
-import Juego.ModeloPartida;
-import Juego.VentanaPartida;
+
 
 public class ModeloDatos {
 	
@@ -31,12 +31,6 @@ public class ModeloDatos {
 		
 		//Array list donde se guarda el nombre y datos de cada equipo creado
 		private ArrayList<String[]> estadoEquipos = new ArrayList<String[]>();
-		
-		
-		
-		//Ventana donde se desarrolla la partida y el modelo de datos donde se guarda el estado de los equipos
-		private ModeloPartida partida = new ModeloPartida();
-		private VentanaPartida ventanaPartida = new VentanaPartida();
 		
 		
 		private int numEquipos = 0;
@@ -88,11 +82,5 @@ public class ModeloDatos {
 			this.numeroCreador = numeroCreador;
 		}
 		
-		public ModeloPartida getModeloPartida() {
-			return this.partida;
-		}
 		
-		public VentanaPartida getVentanaPartida() {
-			return this.ventanaPartida;
-		}
 }

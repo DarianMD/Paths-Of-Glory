@@ -1,22 +1,21 @@
 package utils;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
 
+import JuegoPaises.*;
+import JuegoUtils.ControladorPartida;
 import Paneles.PanelEquipoCreado;
 import Paneles.VentanaJuego;
 
-public class ControladorEventos implements ActionListener {
+public class ControladorEventos implements ActionListener{
 
 	//Modelo donde se guarda por refrencia el modelo de datos usado por la ventana
 	ModeloDatos modelo;
-
 	VentanaJuego ventana;
+
 
 	public ControladorEventos(ModeloDatos modelo) {
 		this.modelo = modelo;
@@ -32,6 +31,8 @@ public class ControladorEventos implements ActionListener {
 		modelo.getPanelMenu().getBotonComoJugar().addActionListener(this);
 		modelo.getPanelMenu().getBotonCreadores().addActionListener(this);
 		modelo.getPanelMenu().getBotonSalir().addActionListener(this);
+		modelo.getPanelMenu().getBotonAnterior().addActionListener(this);
+		modelo.getPanelMenu().getBotonSiguiente().addActionListener(this);
 
 		//Eventos del menu de creacion de equipos
 		modelo.getPanelCreacionEquipos().getBotonJugarPartida().addActionListener(this);
@@ -50,10 +51,9 @@ public class ControladorEventos implements ActionListener {
 	}
 
 
+	
 
-
-
-	//Limpia toda la informacion de los paneles (reinicia el juego)
+	//Limpia toda la informacion de los paneles al volver al menu
 	public void limpiarEquipos() {
 		modelo.getPanelDisplayEquipos().removeAll();
 		modelo.getEquiposCreados().clear();
@@ -64,6 +64,55 @@ public class ControladorEventos implements ActionListener {
 	}
 
 
+
+	
+
+	public ArrayList<Pais> iniciarPartidaConEquiposCreados() {
+		ArrayList<Pais> equipos = new ArrayList<Pais>();
+		
+		for(int i=0;i<modelo.getEstadoEquipos().size();i++) {
+			switch(modelo.getEstadoEquipos().get(i)[1]) {
+			case "España":
+				equipos.add(new PaisEspania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Alemania":
+				equipos.add(new PaisAlemania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Francia":
+				equipos.add(new PaisFrancia(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Italia":
+				equipos.add(new PaisItalia(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Marruecos":
+				equipos.add(new PaisMarruecos(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "URSS":
+				equipos.add(new PaisURSS(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "USA":
+				equipos.add(new PaisEspania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Rumania":
+				equipos.add(new PaisEspania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Portugal":
+				equipos.add(new PaisEspania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Noruega":
+				equipos.add(new PaisNoruega(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			case "Inglaterra":
+				equipos.add(new PaisEspania(modelo.getEstadoEquipos().get(i)[0]));
+				break;
+			}
+		}
+		return equipos;
+	}
+
+
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -71,19 +120,24 @@ public class ControladorEventos implements ActionListener {
 		if(e.getSource() == modelo.getPanelMenu().getBotonJugar()) {
 			modelo.getPanelMenu().setVisible(false);
 			modelo.getPanelCreacionEquipos().setVisible(true);
-
-
+			
 		}
-
+		
 		if(e.getSource() == modelo.getPanelMenu().getBotonComoJugar()) {
-
 		}
-
+		
 		if(e.getSource() == modelo.getPanelMenu().getBotonCreadores()) {
 			modelo.getPanelMenu().setVisible(false);
 			modelo.getPanelCreadores().setVisible(true);
 		}
-
+		if(e.getSource() == modelo.getPanelMenu().getBotonAnterior()) {
+			modelo.getPanelMenu().Anterior();
+		}
+		if(e.getSource() == modelo.getPanelMenu().getBotonSiguiente()) {
+			modelo.getPanelMenu().Siguiente();
+			
+		}
+		
 		if(e.getSource() == modelo.getPanelMenu().getBotonSalir()) {
 			System.exit(0);
 		}
@@ -92,8 +146,10 @@ public class ControladorEventos implements ActionListener {
 		if(e.getSource() == modelo.getPanelCreacionEquipos().getBotonJugarPartida()) {
 			if(this.modelo.getEquiposCreados().size() >= 2) {
 				JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(this.modelo.getPanelMenu());
-				ventana.dispose();
-				this.modelo.getVentanaPartida().setVisible(true);
+				ventana.setVisible(false);
+				ArrayList<Pais> equipos = this.iniciarPartidaConEquiposCreados();
+				ControladorPartida partida = new ControladorPartida();
+				partida.iniciarPartida(equipos);
 
 			}
 		}
@@ -129,6 +185,7 @@ public class ControladorEventos implements ActionListener {
 						modelo.getPanelDisplayEquipos().remove(panelEquipo);
 						modelo.getPanelDisplayEquipos().repaint();
 						modelo.getEquiposCreados().remove(panelEquipo);
+						modelo.getEstadoEquipos().remove(panelEquipo.getY()/180);
 						modelo.setNumEquipos(modelo.getNumEquipos()-1);
 						for(int i=0;i<modelo.getEquiposCreados().size();i++) {
 							modelo.getEquiposCreados().get(i).setBounds(7, (180*i)+5, 1170, 160);

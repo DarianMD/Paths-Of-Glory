@@ -39,9 +39,9 @@ public class PanelCreadores extends JPanel {
 		botonAnterior.setBounds(200, 700, 280, 100);
 		botonVolverMenu.setBounds(25, 25, 380, 105);
 
-		botonSiguiente.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/flecha_derecha.png")));
-		botonAnterior.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/flecha_izquierda.png")));
-		botonVolverMenu.setIcon(new ImageIcon(PanelCreadores.class.getResource("/Botones/volver_menu.png")));
+		botonSiguiente.setIcon(new ImageIcon("/Botones/flecha_derecha.png"));
+		botonAnterior.setIcon(new ImageIcon("/Botones/flecha_izquierda.png"));
+		botonVolverMenu.setIcon(new ImageIcon("/Botones/volver_menu.png"));
 
 		this.add(botonSiguiente);
 		this.add(botonAnterior);
