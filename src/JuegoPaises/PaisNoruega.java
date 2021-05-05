@@ -11,10 +11,5 @@ public class PaisNoruega extends Pais implements Tipo {
 	public void aplicarStatsPais() {
 		this.setVida(250);
 		this.setDañoAtaque(0.7);
-<<<<<<< HEAD
-		
-=======
-		this.setTipo(3);
->>>>>>> origin/main
 	}
 }

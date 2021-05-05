@@ -1,12 +1,8 @@
 package utils;
-<<<<<<< HEAD
-import java.util.ArrayList; 
-=======
 import java.util.ArrayList;
 
 
 
->>>>>>> origin/main
 import Paneles.FormularioCreacionEquipos;
 import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
@@ -35,12 +31,8 @@ public class ModeloDatos {
 		
 		//Array list donde se guarda el nombre y datos de cada equipo creado
 		private ArrayList<String[]> estadoEquipos = new ArrayList<String[]>();
-		
 		private ArrayList<String> nombresEquipos = new ArrayList<String>();
 		
-		
-		
-
 		private int numEquipos = 0;
 		private int numeroCreador  = 1;
 		
@@ -91,7 +83,6 @@ public class ModeloDatos {
 		}
 		
 		
-
 		public ArrayList<String> getNombresEquipos() {
 			return nombresEquipos;
 		}
@@ -127,6 +118,5 @@ public class ModeloDatos {
 		public void setEstadoEquipos(ArrayList<String[]> estadoEquipos) {
 			this.estadoEquipos = estadoEquipos;
 		}
-		
 		
 }

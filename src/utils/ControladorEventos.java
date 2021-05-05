@@ -23,11 +23,7 @@ public class ControladorEventos implements ActionListener{
 		this.abrirBotonesAEventos();
 	}
 
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> origin/main
 	//Abre los botones de todos los paneles a recibir eventos
 	public void abrirBotonesAEventos() {
 		//Eventos del menu principal
@@ -116,10 +112,7 @@ public class ControladorEventos implements ActionListener{
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
