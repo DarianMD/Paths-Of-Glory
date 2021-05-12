@@ -28,6 +28,8 @@ public class VentanaJuego extends JFrame {
 	public void añadirPanelesIniciales() {
 		this.add(paneles.getPanelMenu());
 		paneles.getPanelMenu().setVisible(true);
+		this.add(paneles.getPanelComoJugar());
+		paneles.getPanelComoJugar().setVisible(false);
 		this.add(paneles.getPanelCreadores());
 		paneles.getPanelCreadores().setVisible(false);
 		
@@ -35,6 +37,7 @@ public class VentanaJuego extends JFrame {
 		this.add(paneles.getPanelCreacionEquipos());
 		paneles.getPanelCreacionEquipos().setVisible(false);
 		paneles.getPanelCreadores().IniciarFotos();
+		paneles.getPanelComoJugar().IniciarFondo();
 		
 		paneles.getPanelDisplayEquipos().setBounds(400, 0, 1200, 710);
 		paneles.getPanelCreacionEquipos().add(paneles.getPanelDisplayEquipos());
