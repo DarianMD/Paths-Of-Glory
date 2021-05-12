@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 import Paneles.FormularioCreacionEquipos;
+import Paneles.PanelComoJugar;
 import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
 import Paneles.PanelDisplayEquipos;
@@ -20,6 +21,8 @@ public class ModeloDatos {
 		//Panel donde se muestran los equipos creados
 		private PanelDisplayEquipos panelDisplayEquipos = new PanelDisplayEquipos();
 		
+		//Panel objeto comojugar
+		private PanelComoJugar panelComoJugar = new PanelComoJugar();
 		//Panel donde se muestra la informacion de los creadores
 		private PanelCreadores panelCreadores = new PanelCreadores();
 		
@@ -35,7 +38,7 @@ public class ModeloDatos {
 		
 		private int numEquipos = 0;
 		private int numeroCreador  = 1;
-		
+		private int numeroRegla = 0;
 		
 		
 		public PanelMenu getPanelMenu() {
@@ -48,6 +51,10 @@ public class ModeloDatos {
 
 		public PanelDisplayEquipos getPanelDisplayEquipos() {
 			return panelDisplayEquipos;
+		}
+		
+		public PanelComoJugar getPanelComoJugar() {
+			return panelComoJugar;
 		}
 
 		public PanelCreadores getPanelCreadores() {
@@ -76,6 +83,13 @@ public class ModeloDatos {
 
 		public int getNumeroCreador() {
 			return numeroCreador;
+		}
+		
+		public int getNumeroRegla() {
+			return numeroRegla;
+		}
+		public void setNumeroRegla(int numeroRegla) {
+			this.numeroRegla = numeroRegla;
 		}
 
 		public void setNumeroCreador(int numeroCreador) {

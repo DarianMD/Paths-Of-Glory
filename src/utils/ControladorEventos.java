@@ -38,6 +38,11 @@ public class ControladorEventos implements ActionListener{
 		modelo.getPanelCreacionEquipos().getBotonJugarPartida().addActionListener(this);
 		modelo.getPanelCreacionEquipos().getBotonCrearEquipo().addActionListener(this);
 		modelo.getPanelCreacionEquipos().getBotonVolverMenu().addActionListener(this);
+		
+		//Eventos de comojugar
+		modelo.getPanelComoJugar().getBotonVolverMenu().addActionListener(this);
+		modelo.getPanelComoJugar().getBotonAnterior().addActionListener(this);
+		modelo.getPanelComoJugar().getBotonSiguiente().addActionListener(this);
 
 		//Eventos de creadores
 		modelo.getPanelCreadores().getBotonSiguiente().addActionListener(this);
@@ -124,6 +129,8 @@ public class ControladorEventos implements ActionListener{
 		}
 		
 		if(e.getSource() == modelo.getPanelMenu().getBotonComoJugar()) {
+			modelo.getPanelMenu().setVisible(false);
+			modelo.getPanelComoJugar().setVisible(true);
 		}
 		
 		if(e.getSource() == modelo.getPanelMenu().getBotonCreadores()) {
@@ -217,5 +224,28 @@ public class ControladorEventos implements ActionListener{
 			modelo.getPanelCreadores().setVisible(false);
 			modelo.getPanelMenu().setVisible(true);
 		}
+		
+		//Evento comojugar
+		
+		modelo.getPanelComoJugar().changeReglas(modelo.getNumeroRegla());
+		
+
+		if(e.getSource() == modelo.getPanelComoJugar().getBotonSiguiente() && modelo.getNumeroRegla() < 3) {
+			System.out.println("yeye " + modelo.getNumeroRegla());
+			modelo.setNumeroRegla(modelo.getNumeroRegla()+1);
+			modelo.getPanelComoJugar().changeReglas(modelo.getNumeroRegla());
+		}
+		else if(e.getSource() == modelo.getPanelComoJugar().getBotonAnterior() && modelo.getNumeroRegla() > 0) {
+			System.out.println("sfasdfasdfa "+ modelo.getNumeroRegla());
+			modelo.setNumeroRegla(modelo.getNumeroRegla()-1);
+			modelo.getPanelComoJugar().changeReglas(modelo.getNumeroRegla());
+		}
+	if(e.getSource() == modelo.getPanelComoJugar().getBotonVolverMenu()) {
+		System.out.println("chao");
+		modelo.getPanelComoJugar().setVisible(false);
+		modelo.getPanelMenu().setVisible(true);
+	}
+		
+		
 	}
 }

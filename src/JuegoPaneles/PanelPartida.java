@@ -20,6 +20,9 @@ public class PanelPartida extends JPanel {
 	private JLabel etiquetaVidasRestantesEquipos = new JLabel();
 	private JLabel etiquetaCantidadAtaque = new JLabel();
 	private JLabel etiquetaEnergiaEquipo = new JLabel("Energia : 50");
+	private JLabel fondo = new JLabel();
+	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/jugarfondo.png");
+	
 
 	//Slider para elegir la cantidad de energia a usar
 	private JSlider sliderCantidadAtaque = new JSlider();
@@ -43,7 +46,7 @@ public class PanelPartida extends JPanel {
 	}
 
 	public void colocarComponentesPanel() {
-		this.areaMensajesPartida.setBounds(300, 10,700, 600);
+		this.areaMensajesPartida.setBounds(60, 30,986, 500);
 		this.areaMensajesPartida.setEditable(false);
 	    
 		this.botonAtacar.setBounds(1150,750,200,100);
@@ -74,6 +77,10 @@ public class PanelPartida extends JPanel {
 		this.etiquetaNombreEquipoJugandoTurno.setBounds(20, 50, 200, 100);
 		
 		this.etiquetaEnergiaEquipo.setBounds(20, 150, 200, 100);
+		
+		fondo.setBounds(0, 0, 1600, 900);
+		fondo.setIcon(imagenFondo);
+		
 	}
 	
 
@@ -89,6 +96,7 @@ public class PanelPartida extends JPanel {
 		this.add(etiquetaVidasRestantesEquipos);
 		this.add(etiquetaNombreEquipoJugandoTurno);
 		this.add(etiquetaEnergiaEquipo);
+		this.add(fondo);
 	}
 
 	
