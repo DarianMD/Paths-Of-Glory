@@ -32,9 +32,6 @@ public class ModeloPartida {
 		this.turnosJugados += 1;
 		System.out.println(this.turnosJugados);
 	}
-	
-	
-	
 
 
 	public Pais getPaisJugandoTurno() {

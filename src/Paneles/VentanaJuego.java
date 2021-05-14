@@ -1,6 +1,11 @@
 package Paneles;
 
 import utils.*;
+
+
+import java.awt.event.KeyEvent;
+
+
 import javax.swing.*;
 
 //Ventana principal del juego
@@ -11,6 +16,7 @@ public class VentanaJuego extends JFrame {
 	
 	//Controlador que controla los eventos de cada panel
 	ControladorEventos controlador = new ControladorEventos(paneles);
+	
 	
 	public VentanaJuego() {
 		//Configuracion inicial de la ventana
@@ -34,6 +40,7 @@ public class VentanaJuego extends JFrame {
 		paneles.getPanelCreadores().setVisible(false);
 		
 		
+		
 		this.add(paneles.getPanelCreacionEquipos());
 		paneles.getPanelCreacionEquipos().setVisible(false);
 		paneles.getPanelCreadores().IniciarFotos();
@@ -46,6 +53,8 @@ public class VentanaJuego extends JFrame {
 		
 		paneles.getFormulario().setLocationRelativeTo(paneles.getPanelCreacionEquipos());
 		paneles.getFormulario().setVisible(false);
+		
+		
 	}
 	
 
@@ -69,4 +78,6 @@ public class VentanaJuego extends JFrame {
     }
 		VentanaJuego ventana = new VentanaJuego();
 	}
+
+	
 }

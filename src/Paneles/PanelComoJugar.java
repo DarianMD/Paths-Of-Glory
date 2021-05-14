@@ -18,6 +18,7 @@ public class PanelComoJugar extends JPanel {
 	private ImageIcon juego = new ImageIcon("./assets/Fondos/comojugar.png");
 	private ImageIcon tipos = new ImageIcon("./assets/Fondos/comojugar2.png");
 	private ImageIcon estadisticas = new ImageIcon("./assets/Fondos/comojugar3.png");
+	private ImageIcon controles = new ImageIcon("./assets/Fondos/comojugar4.png");
 	
 	
 	public int numeroReglas;
@@ -33,14 +34,14 @@ public class PanelComoJugar extends JPanel {
 	public void inicializarBotones() {
 
 		botonVolverMenu.setBounds(30, 25, 285, 100);
-		botonAnterior.setBounds(150, 660, 110, 110);
-		botonSiguiente.setBounds(1350, 660, 100, 100);
+		botonAnterior.setBounds(150, 660, 88, 100);
+		botonSiguiente.setBounds(1350, 660, 88, 100);
 		
 		
 	
 		botonVolverMenu.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/boton_volver_al_menu.jpg"));
-		
-
+		botonAnterior.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/atras.png"));
+		botonSiguiente.setIcon(new ImageIcon("./assets/Botones/Botones_Equipos/siguiente.png"));
 	
 		
 		this.add(botonSiguiente);
@@ -80,17 +81,13 @@ public class PanelComoJugar extends JPanel {
 		}
 		else if(numero == 2) {
 			reglas.setIcon(estadisticas);
+		}
+		else if(numero == 3) {
+			reglas.setIcon(controles);
 
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-		
 		public JButton getBotonSiguiente() {
 			return this.botonSiguiente;
 		}

@@ -9,6 +9,7 @@ import Paneles.PanelCreacionEquipos;
 import Paneles.PanelCreadores;
 import Paneles.PanelDisplayEquipos;
 import Paneles.PanelEquipoCreado;
+import Paneles.PanelEscape;
 import Paneles.PanelMenu;
 
 
@@ -28,13 +29,19 @@ public class ModeloDatos {
 		
 		//Ventana para crear equipos
 		private FormularioCreacionEquipos formulario = new FormularioCreacionEquipos();
+		
+		//Ventana de escape
+		private PanelEscape escape = new PanelEscape();
 
 		//Array list donde se van guardando los paneles de cada equipo creado equipos creados
 		private ArrayList<PanelEquipoCreado> equiposCreados = new ArrayList<PanelEquipoCreado>();
 		
+		
+		
 		//Array list donde se guarda el nombre y datos de cada equipo creado
 		private ArrayList<String[]> estadoEquipos = new ArrayList<String[]>();
 		private ArrayList<String> nombresEquipos = new ArrayList<String>();
+		
 		
 		private int numEquipos = 0;
 		private int numeroCreador  = 1;
@@ -61,8 +68,13 @@ public class ModeloDatos {
 			return panelCreadores;
 		}
 
+		
 		public FormularioCreacionEquipos getFormulario() {
 			return formulario;
+		}
+		
+		public PanelEscape getEscape() {
+			return escape;
 		}
 
 		public ArrayList<PanelEquipoCreado> getEquiposCreados() {
@@ -121,6 +133,9 @@ public class ModeloDatos {
 			this.panelCreadores = panelCreadores;
 		}
 
+		public void setPanelEscape(PanelEscape panelEscape) {
+			this.escape = panelEscape;
+		}
 		public void setFormulario(FormularioCreacionEquipos formulario) {
 			this.formulario = formulario;
 		}

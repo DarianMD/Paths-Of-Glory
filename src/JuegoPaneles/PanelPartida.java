@@ -2,14 +2,21 @@ package JuegoPaneles;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
 import java.util.Hashtable;
 
 import javax.swing.*;
+
+import Paneles.VentanaJuego;
+import utils.ModeloDatos;
 
 public class PanelPartida extends JPanel {
 
 	//Text area donde se ponen los eventos de cada turno
 	private JTextArea areaMensajesPartida = new JTextArea();
+
+	
+	
 
 	//Botones principales para acciones en cada turno
 	private JButton botonAtacar = new JButton("Atacar");
@@ -204,4 +211,9 @@ public class PanelPartida extends JPanel {
 	public void setEtiquetaEnergiaEquipo(JLabel etiquetaEnergiaEquipo) {
 		this.etiquetaEnergiaEquipo = etiquetaEnergiaEquipo;
 	}
+	
+	
+
+	
+
 }
