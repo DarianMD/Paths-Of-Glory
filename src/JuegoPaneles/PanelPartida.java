@@ -23,6 +23,7 @@ public class PanelPartida extends JPanel {
 	private JButton botonDefender = new JButton("Defender");
 	private JButton botonPasarTurno = new JButton("Pasar turno");
 	private JButton botonGuardar = new JButton("Guardar");
+	private JScrollPane scrollBar =new JScrollPane(this.areaMensajesPartida,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
 
 	//Etiquetas del menu de la partida
@@ -63,9 +64,7 @@ public class PanelPartida extends JPanel {
 
 	public void colocarComponentesPanel() {
 		
-		this.areaMensajesPartida.setBounds(350, 100,1000, 500);
-		this.areaMensajesPartida.setEditable(false);
-	    
+		this.scrollBar.setBounds(450, 100,1000, 500);	    
 		this.botonAtacar.setBounds(1000,750,185,100);
 		this.botonAtacar.setEnabled(false);
 		this.botonAtacar.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_atacar.jpg"));
@@ -117,7 +116,7 @@ public class PanelPartida extends JPanel {
 
 
 	public void añadirComponentesPanel() {
-		this.add(areaMensajesPartida);
+		this.add(scrollBar);
 		this.add(botonAtacar);
 		this.add(botonDefender);
 		this.add(botonPasarTurno);
