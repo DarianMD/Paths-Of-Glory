@@ -22,6 +22,8 @@ public class PanelPartida extends JPanel {
 	private JButton botonAtacar = new JButton("Atacar");
 	private JButton botonDefender = new JButton("Defender");
 	private JButton botonPasarTurno = new JButton("Pasar turno");
+	private JButton botonGuardar = new JButton("Guardar");
+
 
 	//Etiquetas del menu de la partida
 	private JLabel etiquetaNombreEquipoJugandoTurno = new JLabel();
@@ -31,6 +33,7 @@ public class PanelPartida extends JPanel {
 	private JLabel fondo = new JLabel();
 	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/jugarfondo.png");
 	
+	
 
 	//Slider para elegir la cantidad de energia a usar
 	private JSlider sliderCantidadAtaque = new JSlider();
@@ -39,7 +42,9 @@ public class PanelPartida extends JPanel {
 	JComboBox cajaNombresEquiposEnemigos = new JComboBox();
 
 	
-	Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 25);
+	Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 23);
+	Font  fuente2  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 17);
+
 
 
 	//Constructor
@@ -57,17 +62,28 @@ public class PanelPartida extends JPanel {
 	}
 
 	public void colocarComponentesPanel() {
-		this.areaMensajesPartida.setBounds(200, 30,986, 500);
+		
+		this.areaMensajesPartida.setBounds(350, 100,1000, 500);
 		this.areaMensajesPartida.setEditable(false);
 	    
-		this.botonAtacar.setBounds(1150,750,200,100);
+		this.botonAtacar.setBounds(1000,750,185,100);
 		this.botonAtacar.setEnabled(false);
-		
-		this.botonDefender.setBounds(1370,750, 200, 100);
-		
-		this.botonPasarTurno.setBounds(10,  750, 200, 100);
+		this.botonAtacar.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_atacar.jpg"));
 
-		this.sliderCantidadAtaque.setBounds(1160, 620, 400, 50);
+		
+		this.botonDefender.setBounds(1250,750, 185, 100);
+		this.botonDefender.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_defender.jpg"));
+
+		
+		this.botonPasarTurno.setBounds(10,  750, 188, 100);
+		this.botonPasarTurno.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_pasar_turno.jpg"));
+
+		
+		this.botonGuardar.setBounds(300, 750,185,100);
+		this.botonGuardar.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_guardar.jpg"));
+
+
+		this.sliderCantidadAtaque.setBounds(1000, 620, 400, 100);
 		this.sliderCantidadAtaque.setValue(0);
 		this.sliderCantidadAtaque.setMaximum(50);
 		
@@ -81,13 +97,17 @@ public class PanelPartida extends JPanel {
 		this.etiquetaCantidadAtaque.setBounds(1169, 560, 300, 50);
 		this.etiquetaCantidadAtaque.setText("50");
 
-		this.cajaNombresEquiposEnemigos.setBounds(1380, 0, 200, 30);
+		this.cajaNombresEquiposEnemigos.setBounds(1150, 0, 400, 60);
+		this.cajaNombresEquiposEnemigos.setFont(fuente2);
 		
 		this.etiquetaVidasRestantesEquipos.setBounds(20, 300, 200, 200);
+		this.etiquetaVidasRestantesEquipos.setFont(fuente2);
 		
-		this.etiquetaNombreEquipoJugandoTurno.setBounds(20, 50, 200, 100);
+		this.etiquetaNombreEquipoJugandoTurno.setBounds(20, 50, 500, 500);
+		this.etiquetaNombreEquipoJugandoTurno.setFont(fuente1);
 		
 		this.etiquetaEnergiaEquipo.setBounds(20, 150, 200, 100);
+		this.etiquetaEnergiaEquipo.setFont(fuente1);
 		
 		fondo.setBounds(0, 0, 1600, 900);
 		fondo.setIcon(imagenFondo);
@@ -101,6 +121,7 @@ public class PanelPartida extends JPanel {
 		this.add(botonAtacar);
 		this.add(botonDefender);
 		this.add(botonPasarTurno);
+		this.add(botonGuardar);
 		this.add(sliderCantidadAtaque);
 		this.add(etiquetaCantidadAtaque);
 		this.add(cajaNombresEquiposEnemigos);

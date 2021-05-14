@@ -21,10 +21,6 @@ public class ControladorEventos implements ActionListener, KeyListener{
 	ModeloDatos modelo;
 	VentanaJuego ventana;
 	
-	VentanaPartida ventanas = new VentanaPartida();
-	ModeloPartida modeloDatos = new ModeloPartida();
-
-
 	public ControladorEventos(ModeloDatos modelo) {
 		this.modelo = modelo;
 		ventana =(VentanaJuego) SwingUtilities.getWindowAncestor(modelo.getPanelMenu());
@@ -66,8 +62,6 @@ public class ControladorEventos implements ActionListener, KeyListener{
 		
 	}
 
-
-	
 
 	//Limpia toda la informacion de los paneles al volver al menu
 	public void limpiarEquipos() {

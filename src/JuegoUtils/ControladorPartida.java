@@ -231,7 +231,7 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 	
 	public void añadirEnPantallaNombreEquipoJugando() {
 		String nombre = modeloDatos.getPaisJugandoTurno().getNombre();
-		modeloDatos.getPanelPartida().getEtiquetaNombreEquipoJugandoTurno().setText("Equipo "+nombre+" jugando turno");
+		modeloDatos.getPanelPartida().getEtiquetaNombreEquipoJugandoTurno().setText("Turno de :  "+nombre);
 	}
 
 
