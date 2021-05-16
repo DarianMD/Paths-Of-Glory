@@ -29,8 +29,7 @@ Paths Of Glory it is a cold war game based on the second world war.
 
 <br />
 
-##Captures
-
+## Captures
 
 ![Menu](/assets/MenuPrincipal.PNG)
 <br />
