@@ -13,6 +13,7 @@ import JuegoUtils.ControladorPartida;
 import JuegoUtils.ModeloPartida;
 import Paneles.PanelEquipoCreado;
 import Paneles.VentanaJuego;
+import conexionBaseDeDatos.ConexionBaseDatos;
 
 
 public class ControladorEventos implements ActionListener, KeyListener{
@@ -59,6 +60,10 @@ public class ControladorEventos implements ActionListener, KeyListener{
 		modelo.getFormulario().getBotonCrear().addActionListener(this);
 		
 		modelo.getPanelMenu().addKeyListener(this);
+		
+		modelo.getPanelMenu().getBotonContinuarPartida().addActionListener(this);
+		
+		
 		
 	}
 
@@ -134,6 +139,21 @@ public class ControladorEventos implements ActionListener, KeyListener{
 			modelo.getPanelComoJugar().setVisible(true);
 		}
 		
+		if(e.getSource() == modelo.getPanelMenu().getBotonContinuarPartida()) {
+			ConexionBaseDatos con = new ConexionBaseDatos();
+		    ArrayList<Pais> equipos = con.getEquiposGuardados();
+		    
+		    if(equipos.size() > 1) {
+		    	ControladorPartida partida = new ControladorPartida();
+				partida.iniciarPartida(equipos);
+				
+				JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(this.modelo.getPanelMenu());
+				ventana.dispose();
+		    }
+		    
+		    
+		}
+		
 		if(e.getSource() == modelo.getPanelMenu().getBotonCreadores()) {
 			modelo.getPanelMenu().setVisible(false);
 			modelo.getPanelCreadores().setVisible(true);
@@ -158,8 +178,10 @@ public class ControladorEventos implements ActionListener, KeyListener{
 				JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(this.modelo.getPanelMenu());
 				ventana.setVisible(false);
 				ArrayList<Pais> equipos = this.iniciarPartidaConEquiposCreados();
+				
 				ControladorPartida partida = new ControladorPartida();
 				partida.iniciarPartida(equipos);
+				
 
 			}
 		}
@@ -170,6 +192,7 @@ public class ControladorEventos implements ActionListener, KeyListener{
 			modelo.getPanelCreacionEquipos().limpiarPanelCreacionEquipos();
 			modelo.getPanelCreacionEquipos().setVisible(false);
 			this.limpiarEquipos();
+			this.modelo.getEstadoEquipos().clear();
 			modelo.getPanelMenu().setVisible(true);
 		}
 

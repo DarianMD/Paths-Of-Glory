@@ -10,13 +10,17 @@ import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JSlider;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import JuegoPaises.*;
 import JuegoPaneles.*;
 import JuegoUtils.*;
+import Paneles.VentanaJuego;
+import conexionBaseDeDatos.ConexionBaseDatos;
 
 public class ControladorPartida implements ActionListener, ChangeListener {
 
@@ -47,6 +51,10 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 
 		JButton botonDefender = modeloDatos.getPanelPartida().getBotonDefender();
 		botonDefender.addActionListener(this);
+		
+		modeloDatos.getPanelGanador().getBotonVolverMenu().addActionListener(this);
+		
+		modeloDatos.getPanelPartida().getBotonGuardar().addActionListener(this);
 	}
 
 	public void iniciarPartida(ArrayList<Pais> equipos) {
@@ -92,7 +100,6 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 			añadirEnPantallaVidasRestantesEquipos();
 			this.modeloDatos.getPanelPartida().getCajaNombresEquiposEnemigos().setVisible(true);
 			this.modeloDatos.setPaisSeleccionado(this.comprobarEquipoSeleccionadoCaja());
-			
 		}
 	}
 
@@ -132,12 +139,12 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 
 			for(int j=0;j<ataquesTurnos.size();j++) {
 				if(ataquesTurnos.get(j)[0] == equipo.getNombre()) {
-					equipo.setEscudo(equipo.getEscudo() - Integer.parseInt(ataquesTurnos.get(j)[1]));
+					equipo.setEscudo(equipo.getEscudo() - Double.parseDouble(ataquesTurnos.get(j)[1]));
 					if(equipo.getEscudo() < 0) {
-						equipo.setVida(equipo.getVida() - Math.abs(equipo.getEscudo()));
+						equipo.setVida((int)Math.round(equipo.getVida() - Math.abs(equipo.getEscudo())));
 					}
 					equipo.setEscudo(0);
-					accionesTurnos += "Equipo "+equipo.getNombre()+" es atacado con "+ataquesTurnos.get(j)[1]+" de energia por el equipo "+ataquesTurnos.get(j)[2]+"\r\n";
+					accionesTurnos += "Equipo "+equipo.getNombre()+" es atacado con "+Math.round(Double.parseDouble(ataquesTurnos.get(j)[1]))+" de energia por el equipo "+ataquesTurnos.get(j)[2]+"\r\n";
 					if(equipo.getVida() <=0 && this.modeloDatos.getEquiposCreados().contains(equipo)) {
 						this.modeloDatos.getEquiposCreados().remove(equipo);
 						accionesTurnos += "Equipo "+equipo.getNombre()+" ha sido eliminado por el equipo "+ataquesTurnos.get(j)[2]+"\r\n";
@@ -168,7 +175,7 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 		int cantidadAtaque = modeloDatos.getPanelPartida().getSliderCantidadAtaque().getValue();
 
 		if(equipoAtacante.getEnergia() - cantidadAtaque >= 0 && equipoAtacante != equipoAtacado && cantidadAtaque > 0 && modeloDatos.getPaisSeleccionado() != null) {
-			String[] turnoAtaque = {equipoAtacado.getNombre(), String.valueOf(cantidadAtaque), equipoAtacante.getNombre()};
+			String[] turnoAtaque = {equipoAtacado.getNombre(), String.valueOf((int)cantidadAtaque*equipoAtacante.getDanyoAtaque()), equipoAtacante.getNombre()};
 			ataquesTurnos.add(turnoAtaque);
 			equipoAtacante.setEnergia(equipoAtacante.getEnergia() - cantidadAtaque);
 			int energiaRestanteEquipo = this.modeloDatos.getPaisJugandoTurno().getEnergia();
@@ -259,6 +266,24 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 
 		if(e.getSource() == modeloDatos.getPanelPartida().getBotonDefender()) {
 			this.defender();
+		}
+		
+		if(e.getSource() == modeloDatos.getPanelGanador().getBotonVolverMenu()) {
+			JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(modeloDatos.getPanelGanador());
+			ventana.dispose();
+			
+			VentanaJuego ventanaJuego = new VentanaJuego();
+		}
+		
+		if(e.getSource() == modeloDatos.getPanelPartida().getBotonGuardar()) {
+			
+			ConexionBaseDatos conexion = new ConexionBaseDatos();
+			conexion.setPaisesBaseDatos(this.modeloDatos.getEquiposCreados());
+			JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(modeloDatos.getPanelGanador());
+			ventana.dispose();
+			
+			VentanaJuego ventanaJuego = new VentanaJuego();
+		
 		}
 
 	}

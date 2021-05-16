@@ -3,13 +3,14 @@ package JuegoPaises;
 public class Pais {
 	
 	private int score;
-	private int vida;
+	private double vida;
 	private double danyoAtaque;
 	private String nombre;
 	private String personaje;
-	private int escudo;
+	private double escudo;
 	private int energia;
 	private int puntuacion;
+	private String tipo;
 	
 	protected Pais(String nombre) {
 	  this.nombre = nombre;
@@ -19,6 +20,7 @@ public class Pais {
 	  this.escudo = 0;
 	  this.energia = 50;
 	  this.puntuacion = 0;
+	  this.tipo = "";
     }
 	
     public int getEnergia() {
@@ -37,11 +39,11 @@ public class Pais {
 		this.danyoAtaque = danyoAtaque;
 	}
 
-	public int getEscudo() {
+	public double getEscudo() {
 		return escudo;
 	}
 
-	public void setEscudo(int escudo) {
+	public void setEscudo(double escudo) {
 		this.escudo = escudo;
 	}
 
@@ -59,7 +61,7 @@ public class Pais {
 		this.score = score;
 	}
 	
-	public void setVida(int vida) {
+	public void setVida(double vida) {
 		this.vida = vida;
 	}
 	
@@ -83,12 +85,20 @@ public class Pais {
 		return this.score;
 	}
 	
-	public int getVida() {
+	public double getVida() {
 		return this.vida;
 	}
 	
 	
 	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}

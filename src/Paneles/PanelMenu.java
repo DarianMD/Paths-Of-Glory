@@ -21,6 +21,8 @@ public class PanelMenu extends JPanel {
 
 	//TO-DO
 	private JButton botonSonido = new JButton();
+	
+
 	private JButton botonAjustes = new JButton();
 
 	private JLabel fondo = new JLabel();
@@ -190,5 +192,13 @@ public class PanelMenu extends JPanel {
 
 	public JButton getBotonSiguiente() {
 		return this.botonSiguiente;
+	}
+	
+	public JButton getBotonContinuarPartida() {
+		return botonContinuarPartida;
+	}
+
+	public void setBotonContinuarPartida(JButton botonContinuarPartida) {
+		this.botonContinuarPartida = botonContinuarPartida;
 	}
 }

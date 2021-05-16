@@ -32,6 +32,7 @@ public class PanelPartida extends JPanel {
 	private JLabel etiquetaCantidadAtaque = new JLabel();
 	private JLabel etiquetaEnergiaEquipo = new JLabel("Energia : 50");
 	private JLabel fondo = new JLabel();
+	private JLabel fondoNombresEquipos = new JLabel();
 	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/jugarfondo.png");
 	
 	
@@ -43,9 +44,19 @@ public class PanelPartida extends JPanel {
 	JComboBox cajaNombresEquiposEnemigos = new JComboBox();
 
 	
-	Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 23);
-	Font  fuente2  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 17);
+	private Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 23);
+	private Font  fuente2  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 17);
 
+
+
+	public JButton getBotonGuardar() {
+		return botonGuardar;
+	}
+
+
+	public void setBotonGuardar(JButton botonGuardar) {
+		this.botonGuardar = botonGuardar;
+	}
 
 
 	//Constructor
@@ -93,8 +104,9 @@ public class PanelPartida extends JPanel {
 		sliderCantidadAtaque.setLabelTable( labelTable );
 		sliderCantidadAtaque.setPaintLabels(true);
 
-		this.etiquetaCantidadAtaque.setBounds(1169, 560, 300, 50);
-		this.etiquetaCantidadAtaque.setText("50");
+		this.etiquetaCantidadAtaque.setBounds(1500, 640, 300, 50);
+		this.etiquetaCantidadAtaque.setFont(this.fuente1);
+		this.etiquetaCantidadAtaque.setText("0");
 
 		this.cajaNombresEquiposEnemigos.setBounds(1150, 0, 400, 60);
 		this.cajaNombresEquiposEnemigos.setFont(fuente2);
@@ -110,6 +122,8 @@ public class PanelPartida extends JPanel {
 		
 		fondo.setBounds(0, 0, 1600, 900);
 		fondo.setIcon(imagenFondo);
+		
+		
 		
 	}
 	
