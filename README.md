@@ -26,9 +26,14 @@ Paths Of Glory it is a cold war game based on the second world war.
     $ The last survivor wins
     
   ```
-  
-  ##Captures
 
+
+##Captures
+
+![Menu](/assets/MenuPrincipal.PNG)
+<br />
 ![Menu](/assets/CreacionEquipos.PNG)
+<br />
+![Menu](/assets/MenuEquipos.PNG)
 <br />
 
