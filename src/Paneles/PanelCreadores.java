@@ -35,13 +35,13 @@ public class PanelCreadores extends JPanel {
 
 
 	public void inicializarBotones() {
-		botonSiguiente.setBounds(1100, 700, 280, 100);
-		botonAnterior.setBounds(200, 700, 280, 100);
+		botonSiguiente.setBounds(1050, 700, 88, 100);
+		botonAnterior.setBounds(460, 700, 88, 100);
 		botonVolverMenu.setBounds(25, 25, 380, 105);
 
-		botonSiguiente.setIcon(new ImageIcon("/Botones/flecha_derecha.png"));
-		botonAnterior.setIcon(new ImageIcon("/Botones/flecha_izquierda.png"));
-		botonVolverMenu.setIcon(new ImageIcon("/Botones/volver_menu.png"));
+		botonSiguiente.setIcon(new ImageIcon("./assets/Botones/Botones_Creadores/flecha_derecha.png"));
+		botonAnterior.setIcon(new ImageIcon("./assets/Botones/Botones_Creadores/flecha_izquierda.png"));
+		botonVolverMenu.setIcon(new ImageIcon("./assets/Botones/volver_menu.png"));
 
 		this.add(botonSiguiente);
 		this.add(botonAnterior);
@@ -105,4 +105,7 @@ public class PanelCreadores extends JPanel {
 		return this.botonVolverMenu;
 	}
 
+	
+	
+	
 }

@@ -1,22 +1,27 @@
 package utils;
 import java.awt.Color;
 
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
 import JuegoPaises.*;
+import JuegoPaneles.VentanaPartida;
 import JuegoUtils.ControladorPartida;
+import JuegoUtils.ModeloPartida;
 import Paneles.PanelEquipoCreado;
 import Paneles.VentanaJuego;
+import conexionBaseDeDatos.ConexionBaseDatos;
 
-public class ControladorEventos implements ActionListener{
+
+public class ControladorEventos implements ActionListener, KeyListener{
 
 	//Modelo donde se guarda por refrencia el modelo de datos usado por la ventana
 	ModeloDatos modelo;
 	VentanaJuego ventana;
-
-
+	
 	public ControladorEventos(ModeloDatos modelo) {
 		this.modelo = modelo;
 		ventana =(VentanaJuego) SwingUtilities.getWindowAncestor(modelo.getPanelMenu());
@@ -53,10 +58,15 @@ public class ControladorEventos implements ActionListener{
 
 		//Eventos del formulario de creacion de equipos
 		modelo.getFormulario().getBotonCrear().addActionListener(this);
+		
+		modelo.getPanelMenu().addKeyListener(this);
+		
+		modelo.getPanelMenu().getBotonContinuarPartida().addActionListener(this);
+		
+		
+		
 	}
 
-
-	
 
 	//Limpia toda la informacion de los paneles al volver al menu
 	public void limpiarEquipos() {
@@ -67,10 +77,6 @@ public class ControladorEventos implements ActionListener{
 		//Añadimos los fondos de nuevo para que no se borren
 		modelo.getPanelDisplayEquipos().addFondo();
 	}
-
-
-
-	
 
 	public ArrayList<Pais> iniciarPartidaConEquiposCreados() {
 		ArrayList<Pais> equipos = new ArrayList<Pais>();
@@ -133,6 +139,21 @@ public class ControladorEventos implements ActionListener{
 			modelo.getPanelComoJugar().setVisible(true);
 		}
 		
+		if(e.getSource() == modelo.getPanelMenu().getBotonContinuarPartida()) {
+			ConexionBaseDatos con = new ConexionBaseDatos();
+		    ArrayList<Pais> equipos = con.getEquiposGuardados();
+		    
+		    if(equipos.size() > 1) {
+		    	ControladorPartida partida = new ControladorPartida();
+				partida.iniciarPartida(equipos);
+				
+				JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(this.modelo.getPanelMenu());
+				ventana.dispose();
+		    }
+		    
+		    
+		}
+		
 		if(e.getSource() == modelo.getPanelMenu().getBotonCreadores()) {
 			modelo.getPanelMenu().setVisible(false);
 			modelo.getPanelCreadores().setVisible(true);
@@ -148,6 +169,8 @@ public class ControladorEventos implements ActionListener{
 		if(e.getSource() == modelo.getPanelMenu().getBotonSalir()) {
 			System.exit(0);
 		}
+		
+		
 
 		//Eventos menu creacion equipos
 		if(e.getSource() == modelo.getPanelCreacionEquipos().getBotonJugarPartida()) {
@@ -155,8 +178,10 @@ public class ControladorEventos implements ActionListener{
 				JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(this.modelo.getPanelMenu());
 				ventana.setVisible(false);
 				ArrayList<Pais> equipos = this.iniciarPartidaConEquiposCreados();
+				
 				ControladorPartida partida = new ControladorPartida();
 				partida.iniciarPartida(equipos);
+				
 
 			}
 		}
@@ -167,6 +192,7 @@ public class ControladorEventos implements ActionListener{
 			modelo.getPanelCreacionEquipos().limpiarPanelCreacionEquipos();
 			modelo.getPanelCreacionEquipos().setVisible(false);
 			this.limpiarEquipos();
+			this.modelo.getEstadoEquipos().clear();
 			modelo.getPanelMenu().setVisible(true);
 		}
 
@@ -248,4 +274,29 @@ public class ControladorEventos implements ActionListener{
 		
 		
 	}
+
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		System.out.println("hehe");
+		
+	}
+
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+	
+		
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
+
 }

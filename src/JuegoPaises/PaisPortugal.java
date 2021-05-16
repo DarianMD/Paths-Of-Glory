@@ -9,8 +9,9 @@ public class PaisPortugal extends Pais implements Tipo {
 
 	@Override
 	public void aplicarStatsPais() {
-		this.setDañoAtaque(2);
+		this.setDañoAtaque(0.5);
 		this.setVida((int)(Math.random()*200)+50);
 		this.setDañoAtaque(Math.random()+0.1);
+		this.setTipo("Portugal");
 	}
 }

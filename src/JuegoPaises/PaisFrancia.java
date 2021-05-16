@@ -10,6 +10,7 @@ public class PaisFrancia extends Pais implements Tipo {
 	@Override
 	public void aplicarStatsPais() {
 		this.setDañoAtaque(0.9);
-		this.setVida(220);	
+		this.setVida(220);
+		this.setTipo("Francia");
 	}
 }
