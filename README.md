@@ -9,7 +9,7 @@ Paths Of Glory it is a cold war game based on the second world war.
 [@Sergi321](https://github.com/Sergi321)
 
 
-## Comandos disponibles --> 
+## Rules --> 
   ```
     $ 10 available equipment
   
@@ -26,3 +26,9 @@ Paths Of Glory it is a cold war game based on the second world war.
     $ The last survivor wins
     
   ```
+  
+  ##Captures
+
+![Menu](/tree/main/assets/CreacionEquipos.PNG)
+<br />
+
