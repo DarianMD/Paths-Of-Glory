@@ -9,4 +9,20 @@ Paths Of Glory it is a cold war game based on the second world war.
 [@Sergi321](https://github.com/Sergi321)
 
 
-## Rules
+## Comandos disponibles --> 
+  ```
+    $ 10 available equipment
+  
+    $ Each team with its own life
+   
+    $ Each team with its own damage
+      
+    $ 50 energy per round
+        
+    $ 1 attack = 1 energy
+      
+    $ 1 defense = 2 energy
+     
+    $ The last survivor wins
+    
+  ```
