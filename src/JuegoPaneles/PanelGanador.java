@@ -49,8 +49,6 @@ public class PanelGanador extends JPanel {
 		this.etiquetaGanador.setText("Ha ganado el equipo "+nombreGanador);
 	}
 
-
-
 	public JLabel getEtiquetaGanador() {
 		return etiquetaGanador;
 	}
@@ -82,4 +80,22 @@ public class PanelGanador extends JPanel {
 	public void setScrollBar(JScrollPane scrollBar) {
 		this.scrollBar = scrollBar;
 	}
+
+	public JLabel getFondo() {
+		return fondo;
+	}
+
+	public void setFondo(JLabel fondo) {
+		this.fondo = fondo;
+	}
+
+	public Font getFuente1() {
+		return fuente1;
+	}
+
+	public void setFuente1(Font fuente1) {
+		this.fuente1 = fuente1;
+	}
+
+	
 }

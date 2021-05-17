@@ -39,7 +39,7 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener,
 				+ "comandados por su poderoso lider Franchuten.",
 			"Italia, el país de la pasta, y no precisamente la de comer (que también). Su lider Mussolini"
 			+ "es un hombre severo y temible, ademas de calvo.",
-		    "Rumania y su lider  son temidos por el mundo entero. Ceausescu, su lider, impone"
+		    "Rumania y su lider Vlad son temidos por el mundo entero. Vlad el empalador, tambien llamado el conde Dracúla impone"
 					+ "el terror solo con su presencia.",
 			"Marruecos, liderado por Sadam Husein, lider politico brillante, tiene un ejercito de tierra, mar y aire sumamente"
 		    + "poderoso. Ademas de comer unos kebabs que estan de lujo.",
@@ -49,7 +49,7 @@ public class FormularioCreacionEquipos extends JFrame implements ActionListener,
 	};
 	
 	
-	private String[] vida_jugador = {"250", "190", "130", "250", "200", "250", "220", "200", "500","230"};
+	private String[] vida_jugador = {"250", "190", "130", "250", "200+", "250", "220", "200", "500","230"};
 	
 	private String[] daño_jugador = {"0.6", "1.2", "1.4", "1.1", "0.5", "0.7", "0.9", "1", "0.2", "1.25"};
 

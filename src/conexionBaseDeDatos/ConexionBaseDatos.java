@@ -1,6 +1,7 @@
 package conexionBaseDeDatos;
 
 import java.sql.Connection;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -11,7 +12,7 @@ public class ConexionBaseDatos {
 
 	private static final String USUARIO = "DAW1_500091138497";
 	private static final String PASSWORD = "A500091138497" ;
-	private static final String URL = "jdbc:oracle:thin:@oracle.ilerna.com:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 
 
 
@@ -41,8 +42,6 @@ public class ConexionBaseDatos {
 				equipos.add(equipo);
 				
 
-				
-				
 			}
 
 			st.executeUpdate("TRUNCATE TABLE PARTIDA");
