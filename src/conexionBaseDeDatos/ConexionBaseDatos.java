@@ -15,8 +15,6 @@ public class ConexionBaseDatos {
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
 
 
-
-
 	public ArrayList<Pais> getEquiposGuardados() {
 
 		Connection con = null;
@@ -45,7 +43,6 @@ public class ConexionBaseDatos {
 			}
 
 			st.executeUpdate("TRUNCATE TABLE PARTIDA");
-			System.out.println("Hehe");
 			
 			con.close();
 			st.close();
