@@ -1,6 +1,5 @@
 package JuegoPaneles;
 
-import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
@@ -14,25 +13,25 @@ public class PanelGanador extends JPanel {
 	private JTextArea areaTextoEventosPartida = new JTextArea();
 	private JScrollPane scrollBar =new JScrollPane(this.areaTextoEventosPartida,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	private JLabel fondo = new JLabel();
-	private Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 23);
+	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/ganador.png");
+	Font  fuente3  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ROMAN_BASELINE, 35);
+
 
 	public PanelGanador() {
 		setSize(1600,900);
 		this.inicializarComponentes();
-		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
 		this.añadirComponentes();
 		setVisible(true);
 	}
 
 	public void inicializarComponentes() {
-		this.etiquetaGanador.setBounds(508,100, 500, 100);
-		this.etiquetaGanador.setFont(this.fuente1);
-		this.botonVolverMenu.setBounds(670, 650, 200,100);
-		this.scrollBar.setBounds(530, 330, 500, 300);
-		
-		this.fondo.setBounds(0, 0, 1600, 900);
-		this.fondo.setIcon(new ImageIcon("./assets/Fondos/fondoGanador.jpg"));
+		this.etiquetaGanador.setBounds(318,100, 1000, 100);
+		this.botonVolverMenu.setBounds(670, 740, 200,100);
+		this.scrollBar.setBounds(328, 200, 950, 500);
+		fondo.setBounds(0, 0, 1600, 900);
+		fondo.setIcon(imagenFondo);
+		this.etiquetaGanador.setFont(fuente3);
 	}
 
 
@@ -48,6 +47,8 @@ public class PanelGanador extends JPanel {
 		String nombreGanador = equipoGanador.getNombre();
 		this.etiquetaGanador.setText("Ha ganado el equipo "+nombreGanador);
 	}
+
+
 
 	public JLabel getEtiquetaGanador() {
 		return etiquetaGanador;
@@ -80,22 +81,4 @@ public class PanelGanador extends JPanel {
 	public void setScrollBar(JScrollPane scrollBar) {
 		this.scrollBar = scrollBar;
 	}
-
-	public JLabel getFondo() {
-		return fondo;
-	}
-
-	public void setFondo(JLabel fondo) {
-		this.fondo = fondo;
-	}
-
-	public Font getFuente1() {
-		return fuente1;
-	}
-
-	public void setFuente1(Font fuente1) {
-		this.fuente1 = fuente1;
-	}
-
-	
 }

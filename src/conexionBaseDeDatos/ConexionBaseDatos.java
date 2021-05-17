@@ -36,14 +36,11 @@ public class ConexionBaseDatos {
 
 				Pais equipo = this.returnPaisTipoEspecificado(tipo, nombre);
 				equipo.setVida(vida);
-
 				equipos.add(equipo);
-				
-
 			}
 
 			st.executeUpdate("TRUNCATE TABLE PARTIDA");
-			
+
 			con.close();
 			st.close();
 
@@ -89,37 +86,34 @@ public class ConexionBaseDatos {
 		}
 		return null;
 	}
-	
-	
+
+
 	public void setPaisesBaseDatos(ArrayList<Pais> equipos) {
-		
+
 		Connection con = null;
-		
-		
-		
+
+
+
 		try {
-			
+
 			Class.forName("oracle.jdbc.driver.OracleDriver");	
 			con = DriverManager.getConnection(URL,USUARIO,PASSWORD);
-			
+
 			Statement st = con.createStatement();
-			
-			
+
+
 			for(int i=0;i<equipos.size();i++) {
 				String query = "INSERT INTO PARTIDA VALUES('"+ equipos.get(i).getNombre() + "','"+ equipos.get(i).getTipo() + "',"+ equipos.get(i).getVida() +")";
 				st.execute(query);
 				System.out.println("Valor insertadoo");
 			}
-			
+
 			st.close();
 			con.close();
-			
+
 
 		}catch(Exception e) {
 			System.out.println(e);
 		}
-		
 	}
-	
-
 }
