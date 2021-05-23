@@ -15,9 +15,6 @@ public class PanelPartida extends JPanel {
 	//Text area donde se ponen los eventos de cada turno
 	private JTextArea areaMensajesPartida = new JTextArea();
 
-	
-	
-
 	//Botones principales para acciones en cada turno
 	private JButton botonAtacar = new JButton("Atacar");
 	private JButton botonDefender = new JButton("Defender");
@@ -33,20 +30,18 @@ public class PanelPartida extends JPanel {
 	private JLabel etiquetaEnergiaEquipo = new JLabel("Energia : 50");
 	private JLabel fondo = new JLabel();
 	private JLabel fondoNombresEquipos = new JLabel();
-	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/jugarfondo.png");
+	private ImageIcon imagenFondo = new ImageIcon("./assets/Fondos/jugarfondo.jpg");
 	
 	
-
 	//Slider para elegir la cantidad de energia a usar
 	private JSlider sliderCantidadAtaque = new JSlider();
 
 	//Caja donde se muestan los nombres de los equipos enemigos
 	JComboBox cajaNombresEquiposEnemigos = new JComboBox();
 
-	
+	//Fuentes de texto
 	private Font  fuente1  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 23);
 	private Font  fuente2  = new Font(Font.DIALOG_INPUT,  Font.BOLD|Font.ITALIC, 17);
-
 
 
 	public JButton getBotonGuardar() {
@@ -80,18 +75,14 @@ public class PanelPartida extends JPanel {
 		this.botonAtacar.setEnabled(false);
 		this.botonAtacar.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_atacar.jpg"));
 
-		
 		this.botonDefender.setBounds(1250,750, 185, 100);
 		this.botonDefender.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_defender.jpg"));
 
-		
 		this.botonPasarTurno.setBounds(10,  750, 188, 100);
 		this.botonPasarTurno.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_pasar_turno.jpg"));
 
-		
 		this.botonGuardar.setBounds(300, 750,185,100);
 		this.botonGuardar.setIcon(new ImageIcon("./assets/Botones/Botones_Juego/boton_guardar.jpg"));
-
 
 		this.sliderCantidadAtaque.setBounds(1000, 620, 400, 100);
 		this.sliderCantidadAtaque.setValue(0);
@@ -122,12 +113,9 @@ public class PanelPartida extends JPanel {
 		
 		fondo.setBounds(0, 0, 1600, 900);
 		fondo.setIcon(imagenFondo);
-		
-		
-		
+			
 	}
 	
-
 
 	public void añadirComponentesPanel() {
 		this.add(scrollBar);

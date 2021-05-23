@@ -22,18 +22,24 @@ import JuegoUtils.*;
 import Paneles.VentanaJuego;
 import conexionBaseDeDatos.ConexionBaseDatos;
 
+/**
+ * Esta clase controla todos los eventos necesarios en la partida 
+ * @version 0.8.3
+ * 
+ */
 public class ControladorPartida implements ActionListener, ChangeListener {
 
 
-	VentanaPartida ventana = new VentanaPartida();
-	ModeloPartida modeloDatos = new ModeloPartida();
+	//Modelo y ventana donde se muestran las vistas
+	private VentanaPartida ventana = new VentanaPartida();
+	private ModeloPartida modeloDatos = new ModeloPartida();
 
-
+	//Acciones de defender y atacar en un turno
 	private ArrayList<String[]> ataquesTurnos = new ArrayList<String[]>();
 	private ArrayList<String[]> defensaTurnos = new ArrayList<String[]>();
 
+	//Cadena de texto donde se guardan las acciones de la partida
 	private String accionesTurnos = "";
-
 
 
 	public void abrirComponentesAEventos() {
@@ -60,7 +66,6 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 	public void iniciarPartida(ArrayList<Pais> equipos) {
 
 		modeloDatos.setEquiposCreados(equipos);
-
 		this.abrirComponentesAEventos();
 		this.modeloDatos.setPaisJugandoTurno(modeloDatos.getEquiposCreados().get(0));
 		this.modeloDatos.setPaisSeleccionado(modeloDatos.getEquiposCreados().get(0));
@@ -207,7 +212,6 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 	}
 
 
-	
 	public void añadirNombresEquiposEnemigosComboBox() {
 		Pais equipoJugandoTurno = modeloDatos.getPaisJugandoTurno();
 		ArrayList<String> nombresEnemigos = new ArrayList<String>();
@@ -240,7 +244,6 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 		String nombre = modeloDatos.getPaisJugandoTurno().getNombre();
 		modeloDatos.getPanelPartida().getEtiquetaNombreEquipoJugandoTurno().setText("Turno de :  "+nombre);
 	}
-
 
 
 	@Override
@@ -277,7 +280,7 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 		
 		if(e.getSource() == modeloDatos.getPanelPartida().getBotonGuardar()) {
 			
-			ConexionBaseDatos conexion = new ConexionBaseDatos();
+			ConexionBaseDatos conexion = ConexionBaseDatos.getInstance();
 			conexion.setPaisesBaseDatos(this.modeloDatos.getEquiposCreados());
 			JFrame ventana =(JFrame) SwingUtilities.getWindowAncestor(modeloDatos.getPanelGanador());
 			ventana.dispose();
@@ -285,7 +288,6 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 			VentanaJuego ventanaJuego = new VentanaJuego();
 		
 		}
-
 	}
 
 	@Override
@@ -294,5 +296,4 @@ public class ControladorPartida implements ActionListener, ChangeListener {
 		String num = String.valueOf(slider.getValue());
 		modeloDatos.getPanelPartida().getEtiquetaCantidadAtaque().setText(num);
 	}
-
 }

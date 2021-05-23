@@ -13,8 +13,24 @@ public class ConexionBaseDatos {
 	private static final String USUARIO = "DAW1_500091138497";
 	private static final String PASSWORD = "A500091138497" ;
 	private static final String URL = "jdbc:oracle:thin:@192.168.3.26:1521:xe";
+	
+	//Instancia unica
+	public static ConexionBaseDatos instanciaConexion;
+	
+	//Constructor inaccesible
+	private  ConexionBaseDatos() {
+		
+	}
+	
+	//Metodo para obtener la instancia
+	public static ConexionBaseDatos getInstance() {
+		if( instanciaConexion == null) {
+			instanciaConexion = new ConexionBaseDatos();
+		}
+		return instanciaConexion;
+	}
 
-
+	
 	public ArrayList<Pais> getEquiposGuardados() {
 
 		Connection con = null;
@@ -91,8 +107,6 @@ public class ConexionBaseDatos {
 	public void setPaisesBaseDatos(ArrayList<Pais> equipos) {
 
 		Connection con = null;
-
-
 
 		try {
 
